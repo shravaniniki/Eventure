@@ -11,8 +11,8 @@ import { RouterModule } from '@angular/router';
     color: gray;
     font-weight: bold;
   }
-  button:{
-    margin-left: 15px;
+  button{
+    margin-left: 12px;
   }
   `
 })
