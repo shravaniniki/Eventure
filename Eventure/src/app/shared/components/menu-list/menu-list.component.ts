@@ -19,7 +19,7 @@ import { RouterModule } from '@angular/router';
 export class MenuListComponent {
   menuLinks = [
     {linkName : "Home",linkPath : "/"},
-    {linkName : "Events",linkPath : "/event"},
+    {linkName : "Events",linkPath : "/events"},
     {linkName : "AboutUs", linkPath : "/about"},
   ];
 }
