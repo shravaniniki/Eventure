@@ -1,1 +1,9 @@
-<p>menu-list works!</p>
+<ul class="nav col-12 col-md-auto mb-2 mb-md-0 nav-underline">
+  <li *ngFor="let link of menuLinks">
+    <a href="#" class="nav-link px-2 " [routerLink]="link.linkPath" routerLinkActive="active"
+    [routerLinkActiveOptions]={exact:true}>{{link.linkName}}</a>
+  </li>
+
+  <button type="button" class="btn btn-outline-primary me-2">Login</button>
+  <button type="button" class="btn btn-primary">Sign-up</button>
+</ul>

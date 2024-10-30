@@ -4,7 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { OrganizerComponent } from './profile/components/organizer/organizer.component';
 
 export const routes: Routes = [
-  {path: '',component: HomeComponent, title:'Home'},
+  {path: '',component: HomeComponent, title:'Eventure'},
   {path: 'about',component:AboutComponent, title: 'About'},
   {path: 'profile', children:[
     {path: 'organizer', component: OrganizerComponent, title: 'Profile'}
