@@ -21,5 +21,7 @@ export class MenuListComponent {
     {linkName : "Home",linkPath : "/"},
     {linkName : "Events",linkPath : "/events"},
     {linkName : "AboutUs", linkPath : "/about"},
+    {linkName : "Contact", linkPath : "/contact"},
+  
   ];
 }
