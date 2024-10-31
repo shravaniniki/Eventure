@@ -6,7 +6,11 @@ import { MenuListComponent } from "../menu-list/menu-list.component";
   standalone: true,
   imports: [MenuListComponent],
   templateUrl: './header.component.html',
-  styles: ``
+  styles: `a{
+    color:#f74d6d ; 
+    font-size: 30px; 
+    font-weight: bold;
+  }`
 })
 export class HeaderComponent {
 

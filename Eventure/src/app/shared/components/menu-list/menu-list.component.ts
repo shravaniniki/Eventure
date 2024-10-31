@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-menu-list',
   standalone: true,
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './menu-list.component.html',
   styles: `a{
     color: gray;
@@ -18,10 +18,10 @@ import { RouterModule } from '@angular/router';
 })
 export class MenuListComponent {
   menuLinks = [
-    {linkName : "Home",linkPath : "/"},
-    {linkName : "Events",linkPath : "/events"},
-    {linkName : "AboutUs", linkPath : "/about"},
-    {linkName : "Contact", linkPath : "/contact"},
-  
+    { linkName: "Home", linkPath: "/" },
+    { linkName: "Events", linkPath: "/events" },
+    { linkName: "AboutUs", linkPath: "/about" },
+    { linkName: "Contact", linkPath: "/contact" },
+
   ];
 }
