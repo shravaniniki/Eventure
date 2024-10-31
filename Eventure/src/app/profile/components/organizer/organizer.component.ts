@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './organizer.component.html',
-  styles: ``
+  styleUrl: './organizer.component.css'
 })
 export class OrganizerComponent {
 
