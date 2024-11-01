@@ -12,19 +12,23 @@ import { UserComponent } from './profile/components/user/user.component';
 import { UserSettingsComponent } from './profile/components/user-settings/user-settings.component';
 import { OrganizerProfileComponent } from './profile/components/organizer-profile/organizer-profile.component';
 import { UserProfileComponent } from './profile/components/user-profile/user-profile.component';
+import { LoginComponent } from './auth/components/login/login.component';
+import { SignUpComponent } from './auth/components/sign-up/sign-up.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Eventure' },
   { path: 'list', component: ListEventsComponent, title: 'home' },
+  { path: 'login', component: LoginComponent, title: 'login' },
+  { path: 'sign-up', component: SignUpComponent, title: 'sign-up' },
   { path: 'add', component: AddEventComponent, title: 'Add Event' },
   { path: 'about', component: AboutComponent, title: 'About' },
   { path: 'profile', component: UserComponent, title: 'Profile' },
   { path: 'contact', component: ContactComponent, title: 'Contact' },
   { path: 'user-settings', component: UserSettingsComponent, title: 'UserSettings' },
-  {path: 'organizer', component: OrganizerComponent, title: 'EventOrganizer'},
+  { path: 'organizer', component: OrganizerComponent, title: 'EventOrganizer' },
   {
     path: 'profile', children: [
       { path: 'organizer-profile', component: OrganizerProfileComponent, title: 'Profile' },
-      {path : 'user-profile', component: UserProfileComponent, title: 'Profile'}
+      { path: 'user-profile', component: UserProfileComponent, title: 'Profile' }
     ]
   },
   {
