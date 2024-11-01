@@ -1,5 +1,5 @@
 <ul class="nav col-12 col-md-auto mb-2 mb-md-0">
-  <li *ngFor="let link of menuLinks">
+  <li class="nav-menu" *ngFor="let link of menuLinks">
     <a href="#" class="nav-link px-2 " [routerLink]="link.linkPath" routerLinkActive="active"
       [routerLinkActiveOptions]={exact:true}>{{link.linkName}}</a>
   </li>
@@ -8,7 +8,7 @@
   <button type="button" class="btn"
     style="background-color: #f82249; font-weight: bold; opacity: 60%; color: whitesmoke;">Sign-up</button>
 
-  <svg xmlns="http://www.w3.org/2000/svg" width="38" height="40" fill="white" class="bi bi-person-circle"
+  <svg xmlns="http://www.w3.org/2000/svg" width="38" height="40" fill="gray" class="bi bi-person-circle"
     viewBox="0 0 16 16" style="margin-left: 14px;">
     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
     <path fill-rule="evenodd"
