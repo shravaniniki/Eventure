@@ -7,13 +7,18 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './menu-list.component.html',
-  styles: `a{
+  styles: `
+  ul{
+    margin-right: 20px;
+  }
+  a{
     color: gray;
     font-weight: bold;
   }
   button{
-    margin-left: 12px;
+    margin-left: 10px;
   }
+ 
   `
 })
 export class MenuListComponent {
@@ -24,4 +29,6 @@ export class MenuListComponent {
     { linkName: "Contact", linkPath: "/contact" },
 
   ];
+
+  
 }

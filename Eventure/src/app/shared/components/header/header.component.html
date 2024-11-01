@@ -1,10 +1,10 @@
-<div class="container sticky-top">
-  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
-    <div class="col-md-3 mb-2 mb-md-0">
-      <a href="/" class="title text-decoration-none">
-        Eventure
-      </a>
-    </div>
-    <app-menu-list></app-menu-list>
-  </header>
-</div>
+<header
+  class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 sticky-top"
+  [ngClass]="{'header-solid': showHeader}">
+  <div class="col-md-3 mb-2 mb-md-0">
+    <a href="/" class="title text-decoration-none">
+      Eventure
+    </a>
+  </div>
+  <app-menu-list></app-menu-list>
+</header>
