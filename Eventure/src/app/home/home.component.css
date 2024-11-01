@@ -113,10 +113,11 @@
 
 /* Front Side Style */
 .flip-card-front {
-  background-color: #f45673af; /* Navy blue for front */
+  background-color: #a23e50b5; 
   color: white; /* Light gray text */
   display: flex;
   flex-direction: column;
+  opacity: 90%;
   justify-content: center;
 }
 
