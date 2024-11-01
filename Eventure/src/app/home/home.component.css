@@ -113,7 +113,7 @@
 
 /* Front Side Style */
 .flip-card-front {
-  background-color: #5072A7; /* Navy blue for front */
+  background-color: #f45673af; /* Navy blue for front */
   color: white; /* Light gray text */
   display: flex;
   flex-direction: column;
@@ -122,12 +122,13 @@
 
 /* Back Side Style */
 .flip-card-back {
-  background-color: #34495e; /* Slightly darker navy */
+  background-color: gray; /* Slightly darker navy */
   color: white; /* Light gray text */
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
+   opacity: 90%; 
   align-items: center;
 }
 
@@ -139,7 +140,8 @@
 }
 
 .text-accent {
-  color: #004687;
+  color: #263645;
+  font-weight: bolder;
 }
 /* Event Name Style */
 .event-name {
@@ -166,10 +168,13 @@
 }
 
 .btn-outline-light {
-  border-color: #2980b9;
-  color: #2980b9;
+  background-color: #e05971;
+  color: white;
+  border-color:  #e05971;
+  border-radius: 1.5rem;
+  margin-bottom: 20px;
 }
 .btn-outline-light:hover {
-  background-color: #2980b9;
+  background-color: transparent;
   color: #ecf0f1;
 }
