@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
   }
   
   header {
+  height: 70px;
   background-color: transparent; /* Default transparent background */
   transition: background-color 0.3s ease; /* Add a smooth transition */
   }
