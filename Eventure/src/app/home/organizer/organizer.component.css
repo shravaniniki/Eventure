@@ -17,6 +17,15 @@
   left: 0;
   right: 0;
 }
+.rotate-icon {
+  transform: rotate(180deg);
+  padding-left: 4px;
+}
+
+.btn:hover {
+  background-color: #b30045;
+  color: #fff;
+}
 
 #intro .intro-container {
   position: absolute;

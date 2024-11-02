@@ -17,13 +17,19 @@ export class LoginComponent {
 
   onLogin() {
     // Hardcoded login credentials
-    const hardcodedEmail = "abc";
-    const hardcodedPassword = "a";
+    const hardcodedEmailUser = "aaa";
+    const hardcodedPasswordUser = "a";
+    const hardcodedEmailOrganizer = "bbb";
+    const hardcodedPasswordOrganizer = "b";
 
     // Check if entered credentials match the hardcoded ones
-    if (this.email === hardcodedEmail && this.password === hardcodedPassword) {
+    if (this.email === hardcodedEmailUser && this.password === hardcodedPasswordUser) {
       alert('Login successful');
       this.router.navigate(['/']); 
+    }
+    else if (this.email === hardcodedEmailOrganizer && this.password === hardcodedPasswordOrganizer) {
+      alert('Login successful');
+      this.router.navigate(['/organizer']); 
     } else {
       alert('Invalid credentials');
     }

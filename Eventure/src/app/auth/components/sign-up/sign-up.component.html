@@ -2,29 +2,29 @@
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-10 col-lg-6 col-xl-5">
-
-        <form class="px-4">
+        <form (ngSubmit)="register()" class="px-4">
+          
           <div class="d-flex flex-row align-items-center mb-4">
             <i class="fas fa-user fa-lg me-3"></i>
             <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="form3Example1c">Your Name</label>
-              <input type="text" id="form3Example1c" class="form-control" />
+              <label class="form-label" for="name">Your Name</label>
+              <input type="text" id="name" class="form-control" [(ngModel)]="signupData.name" name="name" required />
             </div>
           </div>
 
           <div class="d-flex flex-row align-items-center mb-4">
             <i class="fas fa-envelope fa-lg me-3"></i>
             <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="form3Example3c">Your Email</label>
-
-              <input type="email" id="form3Example3c" class="form-control" />
+              <label class="form-label" for="email">Your Email</label>
+              <input type="email" id="email" class="form-control" [(ngModel)]="signupData.email" name="email" required />
             </div>
           </div>
+
           <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-envelope fa-lg me-3"></i>
+            <i class="fas fa-phone fa-lg me-3"></i>
             <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="form3Example3c">PhoneNo</label>
-              <input type="email" id="form3Example3c" class="form-control" />
+              <label class="form-label" for="phoneno">Phone Number</label>
+              <input type="tel" id="phoneno" class="form-control" [(ngModel)]="signupData.phoneno" name="phoneno" required />
             </div>
           </div>
 
@@ -33,45 +33,42 @@
               <div class="d-flex justify-content-between">
                 <!-- User Option -->
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="accountType" id="userType" value="user" />
+                  <input class="form-check-input" type="radio" id="userType" [(ngModel)]="signupData.type" name="type" value="user" required />
                   <label class="form-check-label" for="userType">User</label>
                 </div>
                 <!-- Event Organizer Option -->
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="accountType" id="organizerType"
-                    value="eventOrganizer" />
+                  <input class="form-check-input" type="radio" id="organizerType" [(ngModel)]="signupData.type" name="type" value="event organizer" required />
                   <label class="form-check-label" for="organizerType">Event Organizer</label>
                 </div>
               </div>
             </div>
           </div>
 
-
           <div class="d-flex flex-row align-items-center mb-4">
             <i class="fas fa-lock fa-lg me-3"></i>
             <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="form3Example4c">Password</label>
-              <input type="password" id="form3Example4c" class="form-control" />
+              <label class="form-label" for="password">Password</label>
+              <input type="password" id="password" class="form-control" [(ngModel)]="signupData.password" name="password" required />
             </div>
           </div>
 
           <div class="d-flex flex-row align-items-center mb-4">
             <i class="fas fa-key fa-lg me-3"></i>
             <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="form3Example4cd">Repeat your password</label>
-              <input type="password" id="form3Example4cd" class="form-control" />
+              <label class="form-label" for="repeatPassword">Repeat your password</label>
+              <input type="password" id="repeatPassword" class="form-control" [(ngModel)]="signupData.repeatPassword" name="repeatPassword" required />
             </div>
           </div>
 
           <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary btn-lg">Register</button>
+            <button type="submit" class="btn btn-primary btn-lg">Register</button>
           </div>
         </form>
       </div>
 
       <div class="col-md-10 col-lg-6 col-xl-5 d-flex align-items-center">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid"
-          alt="Sample image">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
       </div>
     </div>
   </div>
