@@ -21,7 +21,7 @@ export const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent, title: 'sign-up' },
   { path: 'add', component: AddEventComponent, title: 'Add Event' },
   { path: 'about', component: AboutComponent, title: 'About' },
-  { path: 'profile', component: UserComponent, title: 'Profile' },
+  { path: 'users-profile', component: UserComponent, title: 'Profile' },
   { path: 'contact', component: ContactComponent, title: 'Contact' },
   { path: 'user-settings', component: UserSettingsComponent, title: 'UserSettings' },
   { path: 'organizer', component: OrganizerComponent, title: 'EventOrganizer' },
