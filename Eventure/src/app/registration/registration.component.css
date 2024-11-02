@@ -1,0 +1,18 @@
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: linear-gradient(100deg, #fd8d76 30%, #ff4086 100%);
+    box-shadow: none;
+    border: none
+}
+body{
+    
+}
+.profile-button:hover {
+    color:  #ff4086;
+    font-weight: bold;
+    background: transparent;
+}
