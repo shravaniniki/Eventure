@@ -9,7 +9,7 @@ import { UpdateEventComponent } from './events/components/update-event/update-ev
 import { DeleteEventComponent } from './events/components/delete-event/delete-event.component';
 import { ContactComponent } from './contact/contact.component';
 import { UserComponent } from './profile/components/user/user.component';
-import { UserSettingsComponent } from './profile/components/user-settings/user-settings.component';
+import { UserSettingsComponent } from './registration/registartion.component';
 import { OrganizerProfileComponent } from './profile/components/organizer-profile/organizer-profile.component';
 import { UserProfileComponent } from './profile/components/user-profile/user-profile.component';
 import { LoginComponent } from './auth/components/login/login.component';
@@ -23,7 +23,7 @@ export const routes: Routes = [
   { path: 'about', component: AboutComponent, title: 'About' },
   { path: 'users-profile', component: UserComponent, title: 'Profile' },
   { path: 'contact', component: ContactComponent, title: 'Contact' },
-  { path: 'user-settings', component: UserSettingsComponent, title: 'UserSettings' },
+  { path: 'registration', component: UserSettingsComponent, title: 'UserSettings' },
   { path: 'organizer', component: OrganizerComponent, title: 'EventOrganizer' },
   {
     path: 'profile', children: [
