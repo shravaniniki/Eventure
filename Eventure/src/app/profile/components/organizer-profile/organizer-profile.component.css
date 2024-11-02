@@ -33,18 +33,7 @@
   position: relative;
   background: linear-gradient(150deg, #1d8cf8 20%, #3358f4 100%);
 }
-.theme-orange .profile-page .content__cover {
-  background: linear-gradient(150deg, #ff4086 20%, #fd8d76 100%);
-}
-.theme-purple .profile-page .content__cover {
-  background: linear-gradient(150deg, #8700ff 20%, #f000ff 100%);
-}
-.theme-green .profile-page .content__cover {
-  background: linear-gradient(150deg, #1dcc45 20%, #42b883 100%);
-}
-.theme-blue .profile-page .content__cover {
-  background: linear-gradient(150deg, #0098f0 20%, #00f2c3 100%);
-}
+
 .profile-page .content__bull {
   display: none;
   height: 12rem;
@@ -56,71 +45,8 @@
     display: block;
   }
 }
-.profile-page .content__bull span:nth-child(1) {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  border-radius: 50%;
-}
-.profile-page .content__bull span:nth-child(2) {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  border-radius: 50%;
-}
-.profile-page .content__bull span:nth-child(3) {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  border-radius: 50%;
-}
-.profile-page .content__bull span:nth-child(4) {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  border-radius: 50%;
-}
-.profile-page .content__bull span:nth-child(5) {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  border-radius: 50%;
-}
-.profile-page .content__bull span:nth-child(1) {
-  width: 5rem;
-  height: 5rem;
-  top: -6%;
-  left: -3%;
-  background: rgba(255,255,255,0.12);
-}
-.profile-page .content__bull span:nth-child(2) {
-  width: 8rem;
-  height: 8rem;
-  top: 18%;
-  left: 18%;
-  background: rgba(255,255,255,0.05);
-}
-.profile-page .content__bull span:nth-child(3) {
-  width: 3rem;
-  height: 3rem;
-  top: 8%;
-  right: 2%;
-  background: rgba(255,255,255,0.05);
-}
-.profile-page .content__bull span:nth-child(4) {
-  width: 6rem;
-  height: 6rem;
-  top: 28%;
-  right: 12%;
-  background: rgba(255,255,255,0.1);
-}
-.profile-page .content__bull span:nth-child(5) {
-  width: 4rem;
-  height: 4rem;
-  top: 70%;
-  left: -6%;
-  background: rgba(255,255,255,0.04);
-}
+
+
 .profile-page .content__avatar {
   width: 12rem;
   height: 12rem;
@@ -129,7 +55,7 @@
   left: 50%;
   z-index: 2;
   transform: translate(-50%, 50%);
-  background: #8f6ed5 url("https://image.freepik.com/free-photo/friendly-brunette-looking-camera_23-2147774849.jpg") center center no-repeat;
+  background:  white center center no-repeat;
   background-size: cover;
   border-radius: 50%;
   box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
@@ -200,15 +126,7 @@
 .theme-orange .profile-page .content__actions a:first-child {
   color: #ff4086;
 }
-.theme-purple .profile-page .content__actions a:first-child {
-  color: #8700ff;
-}
-.theme-green .profile-page .content__actions a:first-child {
-  color: #1dcc45;
-}
-.theme-blue .profile-page .content__actions a:first-child {
-  color: #0098f0;
-}
+
 .profile-page .content__actions a:last-child {
   color: #d782d9;
 }
@@ -218,28 +136,10 @@
 .theme-purple .profile-page .content__actions a:last-child {
   color: #f000ff;
 }
-.theme-green .profile-page .content__actions a:last-child {
-  color: #42b883;
-}
-.theme-blue .profile-page .content__actions a:last-child {
-  color: #00f2c3;
-}
-.profile-page .content__actions a:hover:first-child {
-  background: #1d8cf8;
-  color: #fff;
-}
 .theme-orange .profile-page .content__actions a:hover:first-child {
   background: #ff4086;
 }
-.theme-purple .profile-page .content__actions a:hover:first-child {
-  background: #8700ff;
-}
-.theme-green .profile-page .content__actions a:hover:first-child {
-  background: #1dcc45;
-}
-.theme-blue .profile-page .content__actions a:hover:first-child {
-  background: #0098f0;
-}
+
 .profile-page .content__actions a:hover:last-child {
   background: #1d8cf8;
   color: #fff;
@@ -319,17 +219,20 @@
   padding: 1.2rem 1.8rem;
   text-align: center;
   text-decoration: none;
-  background: linear-gradient(100deg, #1d8cf8 30%, #3358f4 100%);
+  background: linear-gradient(100deg, #fd8d76 30%, #ff4086 100%);
   border-radius: 2rem;
   box-shadow: 0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.08);
   font-size: 1rem;
+  font-weight: bold;
   color: #fff;
   cursor: pointer;
   height: 60px;
 }
 
 .profile-page .content__button .button:hover {
-  color: #fff;
+  color:  #ff4086;
+  font-weight: bold;
+  background: transparent;
 }
 @media (max-width: 990px) {
   .profile-page .content__button .button {
