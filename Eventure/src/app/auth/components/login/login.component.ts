@@ -17,7 +17,7 @@ export class LoginComponent {
 
   onLogin() {
     // Hardcoded login credentials
-    const hardcodedEmail = "abc";
+    const hardcodedEmail = "abc@gmail.com";
     const hardcodedPassword = "a";
 
     // Check if entered credentials match the hardcoded ones

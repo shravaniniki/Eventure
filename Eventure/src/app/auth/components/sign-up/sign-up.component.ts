@@ -1,37 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { response } from 'express';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sign-up',
+  standalone: true,
+  imports: [RouterModule, ReactiveFormsModule, CommonModule],
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
-export class SignUpComponent {
-  name = '';
-  email = '';
-  password = '';
-  phoneNo = '';
-
-  constructor(private http: HttpClient, private router: Router) {}
-
-  onSignUp() {
-    const userData = {
-      name: this.name,
-      email: this.email,
-      password: this.password,
-      phoneno: this.phoneNo
-    };
-
-    this.http.post('http://localhost:8080/api/users/register', userData)
-      .subscribe(
-        response => {
-          alert('Sign-up successful');
-          this.router.navigate(['/login']);  // Redirect to login page upon successful sign-up
-        },
-        error => {
-          alert('Sign-up failed');
-        }
-      );
+export class SignUpComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+
+ 
 }
