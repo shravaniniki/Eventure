@@ -14,6 +14,13 @@ import { IEvent } from '../../model/ievent.model';
   imports: [RouterModule,CommonModule],
   templateUrl: './list-events.component.html',
   styles: `
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Controls spacing between cards */
+    justify-content: center;
+}
+
 /* Flip Card Container */
 .flip-card {
     background-color: transparent;
@@ -21,6 +28,7 @@ import { IEvent } from '../../model/ievent.model';
     height: 380px;
     border: none;
     perspective: 1000px;
+    margin: 15px;
 }
 .flip-card-inner {
     position: relative;
