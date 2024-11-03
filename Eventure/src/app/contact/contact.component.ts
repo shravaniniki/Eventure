@@ -27,6 +27,9 @@ import { Component } from '@angular/core';
         <div class="col-md-6">
             <h4>Phone Number</h4>
             <p class="text-muted">1234567899</p>
+            <p class="text-muted">1234567899</p>
+            <p class="text-muted">1234567899</p>
+            <p class="text-muted">1234567899</p>
         </div>
     </div>
 </div>
