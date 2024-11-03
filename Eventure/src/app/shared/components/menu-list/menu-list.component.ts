@@ -53,7 +53,7 @@ import { RouterModule } from '@angular/router';
 export class MenuListComponent {
   menuLinks = [
     { linkName: "Home", linkPath: "/" },
-    { linkName: "Events", linkPath: "/events" },
+    { linkName: "Events", linkPath: "/list" },
     { linkName: "AboutUs", linkPath: "/about" },
     { linkName: "Contact", linkPath: "/contact" },
 
