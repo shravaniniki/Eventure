@@ -18,10 +18,10 @@ import { Component } from '@angular/core';
         <div class="col-md-6">
             <h4>Email Ids</h4>
             <ul class="list-group">
-                <li class="list-group-item">Varshini: varshinisriram02</li>
-                <li class="list-group-item">Shravani: shravani </li>
-                <li class="list-group-item">Sharmila: sharmila </li>
-                <li class="list-group-item">Janani: janani </li>
+                <li class="list-group-item">Varshini: varshinisriram02&#64;gmail.com</li>
+                <li class="list-group-item">Shravani: shravani&#64;gmail.com </li>
+                <li class="list-group-item">Sharmila: sharmila&#64;gmail.com</li>
+                <li class="list-group-item">Janani: janani&#64;gmail.com </li>
             </ul>
         </div>
         <div class="col-md-6">
