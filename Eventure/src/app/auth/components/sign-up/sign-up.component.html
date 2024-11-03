@@ -32,6 +32,7 @@
               'is-invalid': signupData.get('phoneNo')?.touched && signupData.get('phoneNo')?.invalid }" />
               <div class="invalid-feedback">
                 <div id="phoneRequired" *ngIf="signupData.get('phoneNo')?.hasError('required')">Phone is required</div>
+                <div *ngIf="signupData.get('phoneNo')?.hasError('minlength')">Phone number must be of 10 digits.</div>
                 <div id="invalidPhoneNumber" *ngIf="signupData.get('phoneNo')?.hasError('maxlength')">Max 10 Digits</div>
               </div>
             </div>
@@ -75,7 +76,7 @@
             <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
             <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
             <div class="d-flex justify-content-center">
-              <button type="submit" class="btn btn-primary btn-lg">Register</button>
+              <button type="submit" class="btn btn-primary btn-lg"[disabled]="!signupData.valid" >SignUp</button>
             </div>
         </form>
       </div>

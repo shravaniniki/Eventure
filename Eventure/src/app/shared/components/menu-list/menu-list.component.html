@@ -1,6 +1,6 @@
 <ul class="nav col-12 col-md-auto mb-2 mb-md-0">
   <li class="nav-menu" *ngFor="let link of menuLinks">
-    <a href="#" class="nav-link px-2" [routerLink]="link.linkPath" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    <a href="#" class="nav-link px-2" [routerLink]="link.linkPath" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
       {{ link.linkName }}
     </a>
   </li>
@@ -8,7 +8,7 @@
   <!-- Display login/signup buttons only if no one is logged in -->
   <ng-container *ngIf="!loggedInEmail">
     <button type="button" class="btn" routerLink="/login" style="border-color: #f82249; color: gray; font-weight: bold;">Login</button>
-    <button type="button" class="btn" routerLink="/sign-up" style="background-color: #f82249; font-weight: bold; opacity: 60%; color: whitesmoke;">Sign-up</button>
+    <button type="button" class="btn" routerLink="/sign-up" style="background-color: #f82249; font-weight: bold; margin-left:10px; margin-right: 8px; opacity: 70%; color: whitesmoke;">Sign-up</button>
   </ng-container>
 
   <!-- Display logged-in username and logout option if logged in -->

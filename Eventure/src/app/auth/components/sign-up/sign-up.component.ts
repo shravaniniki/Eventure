@@ -15,17 +15,17 @@ import { CommonModule } from '@angular/common';
 })
 export class SignUpComponent {
 
-  signupData: FormGroup;
+  signupData!: FormGroup;
   errorMessage: any;
   successMessage: any;
   signupForm: any;
-mismatch: any;
+  mismatch: any;
 
   constructor(private router: Router, private http: HttpClient) { 
     this.signupData = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      phoneNo: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      phoneNo: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
       type: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('', Validators.required)
