@@ -13,6 +13,10 @@ public class Signup {
     private int id;
 
     private String name;
+    private String email;
+    private String phoneNo;
+    private String type; // user or event organizer
+    private String password;
     public int getId() {
 		return id;
 	}
@@ -31,11 +35,11 @@ public class Signup {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhoneno() {
-		return phoneno;
+	public String getPhoneNo() {
+		return phoneNo;
 	}
-	public void setPhoneno(String phoneno) {
-		this.phoneno = phoneno;
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
 	}
 	public String getType() {
 		return type;
@@ -49,18 +53,6 @@ public class Signup {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRepeatPassword() {
-		return repeatPassword;
-	}
-	public void setRepeatPassword(String repeatPassword) {
-		this.repeatPassword = repeatPassword;
-	}
-	private String email;
-    private String phoneno;
-    private String type; // user or event organizer
-    private String password;
-    private String repeatPassword;
 
-    
 }
 
