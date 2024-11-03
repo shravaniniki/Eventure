@@ -8,91 +8,52 @@ import { Component } from '@angular/core';
    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 <div class="container contact-form">
-            <div class="contact-image">
-                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
-            </div>
-            <form method="post">
-                <h3>Drop Us a Message</h3>
-               <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </form>
+    <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+    </div>
+    <h3>Contact Information</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Email Ids</h4>
+            <ul class="list-group">
+                <li class="list-group-item">Varshini: varshinisriram02&#64;gmail.com</li>
+                <li class="list-group-item">Shravani: shravani&#64;gmail.com </li>
+                <li class="list-group-item">Sharmila: sharmila&#64;gmail.com</li>
+                <li class="list-group-item">Janani: janani&#64;gmail.com </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h4>Phone Number</h4>
+            <p class="text-muted">1234567899</p>
+            <p class="text-muted">1234567899</p>
+            <p class="text-muted">1234567899</p>
+            <p class="text-muted">1234567899</p>
+        </div>
+    </div>
 </div>
+
   `,
-  styles: `body{
-   background-color: #F5F5F5; 
-}
-.contact-form{
-    background: #F5F5F5;
-    margin-top: 10%;
-    margin-bottom: 5%;
-    width: 70%;
-}
-.contact-form .form-control{
-    border-radius:1rem;
-}
-.contact-image{
-    text-align: center;
-}
-.contact-image img{
-    border-radius: 6rem;
-    width: 11%;
-    margin-top: -3%;
-    transform: rotate(29deg);
-}
-.contact-form form{
-    padding: 14%;
-}
-.contact-form form .row{
-    margin-bottom: -7%;
-}
-.contact-form h3{
-    margin-bottom: 8%;
-    margin-top: -10%;
-    text-align: center;
-    color: #0062cc;
-}
-.contact-form .btnContact {
-    width: 50%;
-    border: none;
-    border-radius: 1rem;
-    padding: 1.5%;
-    background: #dc3545;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-}
-.btnContactSubmit
-{
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    color: #fff;
-    background-color: #0062cc;
-    border: none;
-    cursor: pointer;
-}`
+  styles: `
+  .contact-form {
+        background: #f9f9f9;
+        margin-top: 5%;
+        padding: 3%;
+        border-radius: 0.5rem;
+        box-shadow: 0px 0px 10px 0px #000;
+    }
+    .contact-image img {
+        width: 100px;
+        margin-top: -15%;
+        transform: rotate(29deg);
+    }
+    .list-group-item {
+        background-color: #e9ecef;
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+    }
+  `
 })
 export class ContactComponent {
 

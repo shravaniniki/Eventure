@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 const BASIC_URL = "http://localhost:8081/Eventure";
 @Injectable({
@@ -8,11 +8,16 @@ const BASIC_URL = "http://localhost:8081/Eventure";
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  private loggedInEmail = new BehaviorSubject<string | null>(null);  // Observable to track logged-in user's email
+  loggedInEmail$ = this.loggedInEmail.asObservable();  // Expose the observable
 
-  register(url: string,sigupRequestDTO: any): Observable<any>{
-    console.log(sigupRequestDTO);
-    console.log(url);
-    return this.http.post(BASIC_URL +url, sigupRequestDTO);
+  // Function to set the email after a successful login
+  setLoggedInEmail(email: string) {
+    this.loggedInEmail.next(email);
+  }
+
+  // Function to clear email on logout
+  clearLoggedInEmail() {
+    this.loggedInEmail.next(null);
   }
 }
