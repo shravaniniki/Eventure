@@ -29,7 +29,7 @@ import { AuthService } from '../../../auth/services/auth.service';
   margin-top: 5px; /* Space between email and dropdown */
   z-index: 1000; /* Ensure it's on top */
   padding: 5px; /* Reduced padding */
-  width: auto; /* Set width to fit content */
+  width: 50px; /* Set width to fit content */
 }
 
 /* Logout Button Styling */
