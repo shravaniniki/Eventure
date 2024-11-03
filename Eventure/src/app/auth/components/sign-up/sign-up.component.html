@@ -2,74 +2,88 @@
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-10 col-lg-6 col-xl-5">
-        <form (ngSubmit)="register()" class="px-4">
-          
-          <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-user fa-lg me-3"></i>
-            <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="name">Your Name</label>
-              <input type="text" id="name" class="form-control" [(ngModel)]="signupData.name" name="name" required />
+        <form [formGroup]="signupData" (ngSubmit)="signUpForm()" class="px-4">
+
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control is-invalid" id="nameInput" formControlName="name" [ngClass]="{
+            'is-invalid': signupData.get('name')?.touched && signupData.get('name')?.invalid }" />
+            <!-- step6: displaying validation related msg -->
+            <div class="invalid-feedback">
+              <div id="nameRequired">Name is required</div>
             </div>
           </div>
 
-          <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-envelope fa-lg me-3"></i>
-            <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="email">Your Email</label>
-              <input type="email" id="email" class="form-control" [(ngModel)]="signupData.email" name="email" required />
-            </div>
-          </div>
-
-          <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-phone fa-lg me-3"></i>
-            <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="phoneno">Phone Number</label>
-              <input type="tel" id="phoneno" class="form-control" [(ngModel)]="signupData.phoneno" name="phoneno" required />
-            </div>
-          </div>
-
-          <div class="card p-2 mb-3">
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <!-- User Option -->
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" id="userType" [(ngModel)]="signupData.type" name="type" value="user" required />
-                  <label class="form-check-label" for="userType">User</label>
-                </div>
-                <!-- Event Organizer Option -->
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" id="organizerType" [(ngModel)]="signupData.type" name="type" value="event organizer" required />
-                  <label class="form-check-label" for="organizerType">Event Organizer</label>
-                </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" formControlName="email" [ngClass]="{
+              'is-invalid': signupData.get('email')?.touched && signupData.get('email')?.invalid 
+            }" required>
+            <div class="invalid-feedback">
+              <div id="emailRequired" *ngIf="signupData.get('email')?.hasError('required')">Email is required</div>
+              <div id="invalidEmail" *ngIf="signupData.get('email')?.hasError('email')">Email seems to be not valid
               </div>
             </div>
           </div>
 
-          <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-lock fa-lg me-3"></i>
-            <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="password">Password</label>
-              <input type="password" id="password" class="form-control" [(ngModel)]="signupData.password" name="password" required />
+            <div class="mb-3">
+              <label for="phoneNo" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phoneno" name="phoneNo" formControlName="phoneNo" [ngClass]="{
+              'is-invalid': signupData.get('phoneNo')?.touched && signupData.get('phoneNo')?.invalid }" />
+              <div class="invalid-feedback">
+                <div id="phoneRequired" *ngIf="signupData.get('phoneNo')?.hasError('required')">Phone is required</div>
+                <div id="invalidPhoneNumber" *ngIf="signupData.get('phoneNo')?.hasError('maxlength')">Max 10 Digits</div>
+              </div>
             </div>
-          </div>
 
-          <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-key fa-lg me-3"></i>
-            <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="repeatPassword">Repeat your password</label>
-              <input type="password" id="repeatPassword" class="form-control" [(ngModel)]="signupData.repeatPassword" name="repeatPassword" required />
+            <div class="mb-3">
+              <label for="type" class="form-label">Account Type</label>
+              <select class="form-select" id="type" name="type" formControlName="type" [ngClass]="{
+              'is-invalid': signupData.get('type')?.touched && signupData.get('type')?.invalid }">
+                <option value="">Select Account Type</option>
+                <option value="user">User</option>
+                <option value="organizer">Organizer</option>
+              </select>
+              <div class="invalid-feedback">
+                <div id="typeRequired" *ngIf="signupData.get('type')?.hasError('required')">Account Type is required
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary btn-lg">Register</button>
-          </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password"
+                minlength="6" [ngClass]="{
+              'is-invalid':signupData.get('password')?.touched && signupData.get('password')?.errors}">
+              <!-- displaying validation related messages for password -->
+              <div class="invalid-feedback">
+                <!-- checking with password required -->
+                <div *ngIf="signupData.get('password')?.hasError('required')">Password is required</div>
+                <!-- checking for minimum characters in the password -->
+                <div *ngIf="signupData.get('password')?.hasError('minlength')">Password must be at least 6 characters
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="repeatPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword"
+                required>
+              <div class="invalid-feedback" *ngIf="signupData.errors?.[mismatch]">Passwords do not match</div>
+            </div>
+
+            <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+            <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary btn-lg">Register</button>
+            </div>
         </form>
       </div>
-
       <div class="col-md-10 col-lg-6 col-xl-5 d-flex align-items-center">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid"
+          alt="Sample image">
       </div>
     </div>
   </div>
+
 </section>
