@@ -3,66 +3,84 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../../auth/services/auth.service';
 
-
 @Component({
   selector: 'app-menu-list',
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './menu-list.component.html',
   styles: ` 
-  /* User Email Styling */
+/* User Email Styling */
 .user-email {
-  color: #f82249; /* Change this to your preferred color */
+  color: #f82249; 
   font-weight: bold;
-  padding: 0 10px; /* Add some spacing around the email */
-  font-size: 1.1em; /* Slightly increase the font size for emphasis */
-  border: 1px solid #f82249; /* Optional: add a border */
+  padding: 5px 10px; 
+  font-size: 1.1em; 
+  border: 1px solid #f82249; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+/* Logout Dropdown Styling */
+.logout-dropdown {
+  position: absolute; /* Ensures the dropdown appears in the correct place */
+  background-color: white; /* Background color for the dropdown */
+  border: 1px solid #f82249; /* Border color */
   border-radius: 5px; /* Rounded corners */
-  padding: 5px; /* Padding for better spacing */
+  margin-top: 5px; /* Space between email and dropdown */
+  z-index: 1000; /* Ensure it's on top */
+  padding: 5px; /* Reduced padding */
+  width: auto; /* Set width to fit content */
 }
 
 /* Logout Button Styling */
 .btn-logout {
-  background-color: #f82249; /* Button background color */
-  color: white; /* Text color */
+  background-color: transparent; /* No background color */
   border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px 15px; /* Add padding for size */
+  color: #f82249; /* Text color to match your theme */
   font-weight: bold; /* Bold text */
+  padding: 4px 8px; /* Reduced padding */
+  font-size: 0.85em; /* Slightly smaller font size */
+  border-radius: 3px; /* Rounded corners */
   cursor: pointer; /* Change cursor to pointer */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  width: auto; /* Remove full width to fit content */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effect */
 }
 
 /* Hover Effect for Logout Button */
 .btn-logout:hover {
-  background-color: #d7113e; /* Darker shade on hover */
+  background-color: rgba(248, 34, 73, 0.1); /* Light background on hover */
+  transform: scale(1.03); /* Slightly enlarge on hover for effect */
 }
 
-   `
+  `
 })
 export class MenuListComponent implements OnInit {
-  loggedInEmail: string | null = null; // Variable to store logged-in email
+  loggedInEmail: string | null = null;
+  showLogoutDropdown: boolean = false;
 
   menuLinks = [
     { linkName: "Home", linkPath: "/" },
     { linkName: "Events", linkPath: "/list" },
-    { linkName: "AboutUs", linkPath: "/about" },
+    { linkName: "About Us", linkPath: "/about" },
     { linkName: "Contact", linkPath: "/contact" }
   ];
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    // Subscribe to loggedInEmail$ to get updates on login status
     this.authService.loggedInEmail$.subscribe((email) => {
       this.loggedInEmail = email;
     });
   }
-  //loggedInEmail = localStorage.getItem('loggedInEmail'); // Retrieve email from local storage
+
+  toggleLogoutDropdown() {
+    this.showLogoutDropdown = !this.showLogoutDropdown;
+  }
 
   logout() {
-    localStorage.removeItem('loggedInEmail'); // Clear email from local storage
-    this.loggedInEmail = null; // Reset the variable
+    localStorage.removeItem('loggedInEmail');
+    this.loggedInEmail = null;
+    this.showLogoutDropdown = false;
   }
 }
 
