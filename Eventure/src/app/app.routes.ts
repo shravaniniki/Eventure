@@ -39,14 +39,6 @@ export const routes: Routes = [
       { path: 'organizer-profile', component: OrganizerProfileComponent, title: 'Profile' },
       { path: 'user-profile', component: UserProfileComponent, title: 'Profile' }
     ]
-  },
-  {
-    path: 'events', children: [
-      // {path: '', component: ListEventsComponent, title: 'Events'},
-      //{path: 'add', component: AddEventComponent, title: 'Events'},
-      { path: 'id', component: EventDetailsComponent, title: 'Events' },
-      { path: 'edit', component: UpdateEventComponent, title: 'Events' },
-      { path: 'id', component: DeleteEventComponent, title: 'Events' },
-    ]
   }
+ 
 ];
