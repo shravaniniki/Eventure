@@ -19,7 +19,6 @@ export const routes: Routes = [
   { path: 'list', component: ListEventsComponent, title: 'home' },
   { path: 'login', component: LoginComponent, title: 'login' },
   { path: 'sign-up', component: SignUpComponent, title: 'sign-up' },
-  { path: 'add', component: AddEventComponent, title: 'Add Event' },
   { path: 'about', component: AboutComponent, title: 'About' },
   { path: 'users-profile', component: UserComponent, title: 'Profile' },
   { path: 'contact', component: ContactComponent, title: 'Contact' },
@@ -34,7 +33,7 @@ export const routes: Routes = [
   {
     path: 'events', children: [
       // {path: '', component: ListEventsComponent, title: 'Events'},
-      //{path: 'add', component: AddEventComponent, title: 'Events'},
+      {path: 'add', component: AddEventComponent, title: 'Events'},
       { path: 'id', component: EventDetailsComponent, title: 'Events' },
       { path: 'edit', component: UpdateEventComponent, title: 'Events' },
       { path: 'id', component: DeleteEventComponent, title: 'Events' },
