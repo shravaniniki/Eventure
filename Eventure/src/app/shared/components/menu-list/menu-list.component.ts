@@ -80,27 +80,26 @@ import { AuthService } from '../../../auth/services/auth.service';
   transform: scale(1.03); /* Slightly enlarge on hover for effect */
 }
 
-  `
+  `,
 })
 export class MenuListComponent implements OnInit {
   loggedInEmail: string | null = null;
   showLogoutDropdown: boolean = false;
 
   menuLinks = [
-    { linkName: "Home", linkPath: "/" },
-    { linkName: "Events", linkPath: "/list" },
-    { linkName: "About Us", linkPath: "/about" },
-    { linkName: "Contact", linkPath: "/contact" }
+    { linkName: 'Home', linkPath: '/' },
+    { linkName: 'Events', linkPath: '/list' },
+    { linkName: 'About Us', linkPath: '/about' },
+    { linkName: 'Contact', linkPath: '/contact' },
   ];
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.loggedInEmail$.subscribe((email) => {
+    this.authService.loggedInEmail$.subscribe((email: string | null) => {
       this.loggedInEmail = email;
     });
   }
-
   toggleLogoutDropdown() {
     this.showLogoutDropdown = !this.showLogoutDropdown;
   }
@@ -111,4 +110,3 @@ export class MenuListComponent implements OnInit {
     this.showLogoutDropdown = false;
   }
 }
-

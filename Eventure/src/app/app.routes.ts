@@ -8,7 +8,6 @@ import { EventDetailsComponent } from './events/components/event-details/event-d
 import { UpdateEventComponent } from './events/components/update-event/update-event.component';
 import { DeleteEventComponent } from './events/components/delete-event/delete-event.component';
 import { ContactComponent } from './contact/contact.component';
-import { UserComponent } from './profile/components/user/user.component';
 import { UserSettingsComponent } from './registration/registartion.component';
 import { OrganizerProfileComponent } from './profile/components/organizer-profile/organizer-profile.component';
 import { UserProfileComponent } from './profile/components/user-profile/user-profile.component';
@@ -20,33 +19,54 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent, title: 'login' },
   { path: 'sign-up', component: SignUpComponent, title: 'sign-up' },
   {
-		path: 'events', children: [
-				{ path: 'add', component: AddEventComponent ,  title: 'Add Event'  },
-				{ path: ':id/delete', component: DeleteEventComponent,  title: 'Delete Event'  },
-				{ path: ':id/edit', component: UpdateEventComponent,  title: 'Update Event'  }, //id is url parameter
-				{ path: '', component: ListEventsComponent,  title: 'Events'  },
-				{ path: ':id', component: EventDetailsComponent,  title: 'Event Detail'  },
-
-		]
-},
+    path: 'events',
+    children: [
+      { path: 'add', component: AddEventComponent, title: 'Add Event' },
+      {
+        path: ':id/delete',
+        component: DeleteEventComponent,
+        title: 'Delete Event',
+      },
+      {
+        path: ':id/edit',
+        component: UpdateEventComponent,
+        title: 'Update Event',
+      }, //id is url parameter
+      { path: '', component: ListEventsComponent, title: 'Events' },
+      { path: ':id', component: EventDetailsComponent, title: 'Event Detail' },
+    ],
+  },
   { path: 'about', component: AboutComponent, title: 'About' },
-  { path: 'users-profile', component: UserComponent, title: 'Profile' },
   { path: 'contact', component: ContactComponent, title: 'Contact' },
-  { path: 'registration', component: UserSettingsComponent, title: 'UserSettings' },
+  {
+    path: 'registration',
+    component: UserSettingsComponent,
+    title: 'UserSettings',
+  },
   { path: 'organizer', component: OrganizerComponent, title: 'EventOrganizer' },
   {
-    path: 'profile', children: [
-      { path: 'organizer-profile', component: OrganizerProfileComponent, title: 'Profile' },
-      { path: 'user-profile', component: UserProfileComponent, title: 'Profile' }
-    ]
+    path: 'profile',
+    children: [
+      {
+        path: 'organizer-profile',
+        component: OrganizerProfileComponent,
+        title: 'Profile',
+      },
+      {
+        path: 'user-profile',
+        component: UserProfileComponent,
+        title: 'Profile',
+      },
+    ],
   },
   {
-    path: 'events', children: [
+    path: 'events',
+    children: [
       // {path: '', component: ListEventsComponent, title: 'Events'},
-      {path: 'add', component: AddEventComponent, title: 'Events'},
+      { path: 'add', component: AddEventComponent, title: 'Events' },
       { path: 'id', component: EventDetailsComponent, title: 'Events' },
       { path: 'edit', component: UpdateEventComponent, title: 'Events' },
       { path: 'id', component: DeleteEventComponent, title: 'Events' },
-    ]
-  }
+    ],
+  },
 ];
