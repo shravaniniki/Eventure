@@ -90,7 +90,9 @@
   color: #d6336c; /* Reddish-pink color for the heading */
 }
 
-
+.lead.text-muted {
+  color: white;
+}
 
 
 .flip-card {
