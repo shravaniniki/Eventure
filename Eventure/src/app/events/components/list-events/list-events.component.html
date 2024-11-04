@@ -14,11 +14,11 @@
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title text-accent event-name">{{ event.name }}</h5>
                 <ul class="list-unstyled mb-4 event-list">
-                  <li><strong>Organizer:</strong> {{ event.organizer }}</li><br>
-                  <li><strong>Date:</strong> {{ event.date | date:'mediumDate' }}</li><br>
-                  <li><strong>Location:</strong> {{ event.location }}</li><br>
-                  <li><strong>Mode:</strong> {{ event.mode }}</li><br>
-                  <li><strong>Seats Left:</strong> to be implemented</li>
+                  <li><strong>Organizer:</strong> {{ event.organizer }}</li>
+                  <li><strong>Date:</strong> {{ event.e_date | date:'mediumDate' }}</li>
+                  <li><strong>Location:</strong> {{ event.location }}</li>
+                  <li><strong>Mode:</strong> {{ event.e_mode }}</li>
+                  <li><strong>Seats Left:</strong> {{ event.maxParticipants - event.no_of_part }}</li>
                 </ul>
               </div>
             </div>
