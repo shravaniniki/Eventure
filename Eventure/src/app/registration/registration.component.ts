@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { EventService } from '../events/services/event.service';
-
+import { UserService} from '../users/services/user/user.service';
 @Component({
   selector: 'app-user-settings',
   standalone: true,
@@ -14,7 +14,7 @@ import { EventService } from '../events/services/event.service';
 export class UserSettingsComponent {
   registrationForm: FormGroup;
   isSaved = false;
-  constructor(private eventServiceService: EventService) {
+  constructor(private userService:UserService) {
     this.registrationForm = new FormGroup({
       name: new FormControl('', Validators.required),
       phone: new FormControl('', [Validators.required, Validators.pattern("[0-9]{10}")]),
@@ -24,19 +24,19 @@ export class UserSettingsComponent {
   }
   handleSubmit() {
    
-//         const eventData = {
-//             ...this.registrationForm.value,
-//             e_date: this.registrationForm.value.date, // Rename for service if necessary
-//             e_mode: this.registrationForm.value.mode  // Rename for service if necessary
-//         };
-//         console.log('Event Data:', eventData); // Check the data before sending
+        const userData = {
+            u_name: this.registrationForm.value.name, 
+            u_email: this.registrationForm.value.email,
+            u_number:this.registrationForm.value.email 
+        };
+        console.log('user Data:', userData);
 
-//         this.eventServiceService.addEvent(eventData)
-//             .subscribe((response: any) => {
-//                 console.log(response);
-//                 this.isSaved = true;
-//                 this.registrationForm.reset();//Reset form on success
-//             });  
+        this.userService.addUser(userData)
+            .subscribe((response: any) => {
+                console.log(response);
+                this.isSaved = true;
+                this.registrationForm.reset();
+            });  
 }
 }
 
