@@ -9,7 +9,7 @@ import { UpdateEventComponent } from './events/components/update-event/update-ev
 import { DeleteEventComponent } from './events/components/delete-event/delete-event.component';
 import { ContactComponent } from './contact/contact.component';
 import { UserComponent } from './profile/components/user/user.component';
-import { UserSettingsComponent } from './registration/registartion.component';
+import { UserSettingsComponent } from './registration/registration.component';
 import { OrganizerProfileComponent } from './profile/components/organizer-profile/organizer-profile.component';
 import { UserProfileComponent } from './profile/components/user-profile/user-profile.component';
 import { LoginComponent } from './auth/components/login/login.component';

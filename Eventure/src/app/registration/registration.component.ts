@@ -1,23 +1,17 @@
-<<<<<<< HEAD
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { EventService } from '../events/services/event.service';
+
 @Component({
   selector: 'app-user-settings',
   standalone: true,
-  imports: [ReactiveFormsModule,RouterModule,CommonModule],
-=======
-import { Component, ElementRef, ViewChild } from '@angular/core';
-
-@Component({
-  selector: 'app-registration',
->>>>>>> 23fd564496aba88f60afb98e7da120c607c7db27
+  imports: [RouterModule, ReactiveFormsModule, CommonModule],
   templateUrl: './registration.component.html',
+  styleUrl: './registration.component.css'
 })
 export class UserSettingsComponent {
-<<<<<<< HEAD
   registrationForm: FormGroup;
   isSaved = false;
   constructor(private eventServiceService: EventService) {
@@ -46,19 +40,5 @@ export class UserSettingsComponent {
 }
 }
 
-=======
   // Access the form element
-  @ViewChild('registrationForm', { static: false }) registrationForm!: ElementRef;
-
-  // Method to handle form submission
-  onRegister() {
-    alert("Event Registered"); // Display alert
-
-    // Reset the form fields
-    if (this.registrationForm) {
-      this.registrationForm.nativeElement.reset();
-    }
-  }
-}
->>>>>>> 23fd564496aba88f60afb98e7da120c607c7db27
-
+  
