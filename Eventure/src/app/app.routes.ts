@@ -19,6 +19,16 @@ export const routes: Routes = [
   { path: 'list', component: ListEventsComponent, title: 'home' },
   { path: 'login', component: LoginComponent, title: 'login' },
   { path: 'sign-up', component: SignUpComponent, title: 'sign-up' },
+  {
+		path: 'events', children: [
+				{ path: 'add', component: AddEventComponent ,  title: 'Add Event'  },
+				{ path: ':id/delete', component: DeleteEventComponent,  title: 'Delete Event'  },
+				{ path: ':id/edit', component: UpdateEventComponent,  title: 'Update Event'  }, //id is url parameter
+				{ path: '', component: ListEventsComponent,  title: 'Events'  },
+				{ path: ':id', component: EventDetailsComponent,  title: 'Event Detail'  },
+
+		]
+},
   { path: 'about', component: AboutComponent, title: 'About' },
   { path: 'users-profile', component: UserComponent, title: 'Profile' },
   { path: 'contact', component: ContactComponent, title: 'Contact' },
