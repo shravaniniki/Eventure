@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
-import { FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-user-settings',
-  standalone: true,
-  imports: [],
+  selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrl: './registration.component.css'
 })
 export class UserSettingsComponent {
+  // Access the form element
+  @ViewChild('registrationForm', { static: false }) registrationForm!: ElementRef;
 
+  // Method to handle form submission
+  onRegister() {
+    alert("Event Registered"); // Display alert
+
+    // Reset the form fields
+    if (this.registrationForm) {
+      this.registrationForm.nativeElement.reset();
+    }
+  }
 }
+

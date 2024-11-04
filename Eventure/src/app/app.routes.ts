@@ -47,6 +47,7 @@ export const routes: Routes = [
       { path: 'id', component: EventDetailsComponent, title: 'Events' },
       { path: 'edit', component: UpdateEventComponent, title: 'Events' },
       { path: 'id', component: DeleteEventComponent, title: 'Events' },
+      
     ]
   }
 ];
