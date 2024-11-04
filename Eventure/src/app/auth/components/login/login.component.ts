@@ -15,7 +15,7 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) { }
 
   onLogin() {
     // Hardcoded login credentials
@@ -24,14 +24,20 @@ export class LoginComponent {
     const hardcodedEmailOrganizer = "bbb";
     const hardcodedPasswordOrganizer = "b";
 
-    if ((this.email === hardcodedEmailUser && this.password === hardcodedPasswordUser) ||
-        (this.email === hardcodedEmailOrganizer && this.password === hardcodedPasswordOrganizer)) {
-      
+    if ((this.email === hardcodedEmailUser && this.password === hardcodedPasswordUser)) {
+
       this.authService.setLoggedInEmail(this.email);  // Set the email in AuthService
       alert('Login successful');
       this.router.navigate(['/']);  // Navigate to homepage or other routes as needed
-    } else {
+    }
+    else if ((this.email === hardcodedEmailOrganizer && this.password === hardcodedPasswordOrganizer)) {
+      this.authService.setLoggedInEmail(this.email);  // Set the email in AuthService
+      alert('Login successful');
+      this.router.navigate(['/organizer']);  // Navigate to homepage or other routes as needed
+    }
+    else {
       alert('Invalid credentials');
     }
   }
 }
+
