@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserSettingsComponent } from './registartion.component';
+import { UserSettingsComponent } from './registration.component';
 
 describe('UserSettingsComponent', () => {
   let component: UserSettingsComponent;
@@ -20,4 +20,6 @@ describe('UserSettingsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });
+

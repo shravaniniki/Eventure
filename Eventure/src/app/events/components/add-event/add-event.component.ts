@@ -54,6 +54,7 @@ export class AddEventComponent {
                 this.isSaved = true;
                 this.addEventForm.reset(); // Reset form on success
             });
+        
    
 }
 
