@@ -11,7 +11,7 @@ import { UserService} from '../users/services/user/user.service';
   templateUrl: './registration.component.html',
   styleUrl: './registration.component.css'
 })
-export class UserSettingsComponent {
+export class RegistrationComponent {
   registrationForm: FormGroup;
   isSaved = false;
   constructor(private userService:UserService) {

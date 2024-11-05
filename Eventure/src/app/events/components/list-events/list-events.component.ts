@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { EventService } from '../../services/event.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IEvent } from '../../model/ievent.model';
+import { AuthService } from '../../../auth/services/auth.service';
 
 
 
@@ -120,7 +121,7 @@ export class ListEventsComponent implements OnInit {
   events: IEvent[] = [];
   router: any;
   
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService,private authService: AuthService) {
     
   }
 
@@ -134,5 +135,14 @@ export class ListEventsComponent implements OnInit {
       console.log(response);
       this.events = response;
     })
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
+  }
+
+  // Method to log the user out
+  logout(): void {
+    this.authService.logout();
   }
 }

@@ -8,7 +8,7 @@ import { EventDetailsComponent } from './events/components/event-details/event-d
 import { UpdateEventComponent } from './events/components/update-event/update-event.component';
 import { DeleteEventComponent } from './events/components/delete-event/delete-event.component';
 import { ContactComponent } from './contact/contact.component';
-import { UserSettingsComponent } from './registration/registration.component';
+import { RegistrationComponent } from './registration/registration.component';
 import { OrganizerProfileComponent } from './profile/components/organizer-profile/organizer-profile.component';
 import { UserProfileComponent } from './profile/components/user-profile/user-profile.component';
 import { LoginComponent } from './auth/components/login/login.component';
@@ -40,8 +40,8 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent, title: 'Contact' },
   {
     path: 'registration',
-    component: UserSettingsComponent,
-    title: 'UserSettings',
+    component: RegistrationComponent,
+    title: 'Register',
   },
   { path: 'organizer', component: OrganizerComponent, title: 'EventOrganizer' },
   {

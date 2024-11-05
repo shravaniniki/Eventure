@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from '../../../auth/services/auth.service';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-organizer-profile',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './organizer-profile.component.html',
   styleUrl: './organizer-profile.component.css'
 })

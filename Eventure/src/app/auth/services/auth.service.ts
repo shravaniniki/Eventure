@@ -16,6 +16,7 @@ export interface LoginResponse {
 export class AuthService {
   private loggedInUser = new BehaviorSubject<LoginResponse | null>(null); // Store the entire user object
   loggedInUser$ = this.loggedInUser.asObservable();
+ loggedIn: boolean = false;
 
   // private loggedInEmail = new BehaviorSubject<string | null>(null); // Observable to track logged-in user's email
   // loggedInEmail$ = this.loggedInEmail.asObservable(); // Expose the observable
@@ -55,5 +56,20 @@ export class AuthService {
   getPhoneNo(): string | null {
     return this.loggedInUser.value?.phoneNo || null;
   }
+  private userEmail: string | null = null; // Store the user's email
+
+
+  // This method should be called when the user logs in
+  setUserEmail(email: string) {
+    this.userEmail = email;
+  }
+
+
+  // This method retrieves the logged-in user's email
+  getUserEmail(): string | null {
+    return this.userEmail;
+  }
+  
+  
 
 }

@@ -38,4 +38,7 @@ export class EventService {
   updateEvent(eventId: string, eventData: Event): Observable<Event> {
     return this.http.put<Event>(`${this.apiUrl}/${eventId}`, eventData);
   }
+  getEventsByOrganizer(email: string): Observable<IEvent[]> {
+    return this.http.get<IEvent[]>(`${this.apiUrl}/organizer/${email}`);
+  }
 }
