@@ -3,10 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IEvent } from '../model/ievent.model';
 
-
-
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -14,9 +10,10 @@ export class EventService {
   private apiUrl = 'http://localhost:8081/api/events';
 
   constructor(private http: HttpClient) { }
+
+  
   // 1. get the request from component
   getEvents(): Observable<IEvent[]> {
-    console.log('Inside getEmployees');
     // 2. send the request to the REST api
     // 2.1 What's the REST API URL? apiUrl
     // 2.2 What's the HTTP Method? GET

@@ -48,12 +48,33 @@ export class AddEventComponent {
   }
 
   handleSubmit() {
+<<<<<<< HEAD
     const eventData = {
       ...this.addEventForm.value,
       e_date: this.addEventForm.value.date, // Rename for service to store in db
       e_mode: this.addEventForm.value.mode, // Rename for service to store in db
     };
     console.log('Event Data:', eventData); // Check the data before sending
+=======
+   
+        const eventData = {
+            ...this.addEventForm.value,
+            e_date: this.addEventForm.value.date, // Rename for service if necessary
+            e_mode: this.addEventForm.value.mode  // Rename for service if necessary
+        };
+        console.log('Event Data:', eventData); // Check the data before sending
+
+        this.eventServiceService.addEvent(eventData)
+            .subscribe((response: any) => {
+                console.log(response);
+                this.isSaved = true;
+                this.addEventForm.reset(); // Reset form on success
+            });
+        
+   
+}
+
+>>>>>>> 0f6fb80682a72b0701b57ece52a3a3e85ae037b3
 
     this.eventServiceService.addEvent(eventData).subscribe((response: any) => {
       console.log(response);

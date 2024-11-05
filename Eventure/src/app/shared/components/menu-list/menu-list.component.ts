@@ -80,35 +80,34 @@ import { AuthService } from '../../../auth/services/auth.service';
   transform: scale(1.03); /* Slightly enlarge on hover for effect */
 }
 
-  `
+  `,
 })
 export class MenuListComponent implements OnInit {
-  loggedInEmail: string | null = null;
+  // loggedInEmail: string | null = null;
   showLogoutDropdown: boolean = false;
 
   menuLinks = [
-    { linkName: "Home", linkPath: "/" },
-    { linkName: "Events", linkPath: "/list" },
-    { linkName: "About Us", linkPath: "/about" },
-    { linkName: "Contact", linkPath: "/contact" }
+    { linkName: 'Home', linkPath: '/' },
+    { linkName: 'Events', linkPath: '/list' },
+    { linkName: 'About Us', linkPath: '/about' },
+    { linkName: 'Contact', linkPath: '/contact' },
   ];
+  loggedInUser: any | null = null;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.loggedInEmail$.subscribe((email) => {
-      this.loggedInEmail = email;
-    });
-  }
-
-  toggleLogoutDropdown() {
-    this.showLogoutDropdown = !this.showLogoutDropdown;
-  }
-
-  logout() {
-    localStorage.removeItem('loggedInEmail');
-    this.loggedInEmail = null;
-    this.showLogoutDropdown = false;
-  }
+      // Check local storage on component init
+      const storedUser = localStorage.getItem('loggedInUser');
+      if(storedUser){
+        this.loggedInUser = JSON.parse(storedUser);
+      }
+      this.authService.loggedInUser$.subscribe((user: any | null) => {
+        this.loggedInUser = user;
+      });
+    }
+  
+    logout() {
+      this.authService.logout();
+    }
 }
-
