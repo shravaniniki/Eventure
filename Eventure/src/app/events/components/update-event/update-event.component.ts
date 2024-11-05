@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { EventService } from '../../services/event.service';
-import { ActivatedRoute } from '@angular/router'; 
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-update-event',
@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateEventComponent implements OnInit {
   eventForm: FormGroup;
   eventId?: string; // Declaring a variable to dynamically update the event id
-
+// using activated route to fetch the event id from the url
   constructor(
     private fb: FormBuilder,
     private eventService: EventService,
@@ -35,6 +35,7 @@ export class UpdateEventComponent implements OnInit {
 
   ngOnInit(): void {
     // Get the eventId from route parameters
+    //paramMap contains all the route parameters associated with the current route.
     this.route.paramMap.subscribe(params => {
       this.eventId = params.get('id')!; // Retrieve eventId . Non null assertion
       if (this.eventId) {
@@ -54,27 +55,27 @@ export class UpdateEventComponent implements OnInit {
     );
   }
 
-  
-    onSubmit(): void {
-      if (this.eventForm.valid) {
-        // Call the update method from the service
-        this.eventService.updateEvent(this.eventId!, this.eventForm.value).subscribe(
-          () => {
-            console.log('Event updated successfully!');
-            // Optionally redirect or show a success message
-          },
-          error => {
-            console.error('Error updating event', error);
-            // Show an error message to the user
-          }
-        );
-      } else {
-        console.error('Form is invalid');
-        // Optionally show a message to correct the errors
-      }
+
+  onSubmit(): void {
+    if (this.eventForm.valid) {
+      // Call the update method from the service
+      this.eventService.updateEvent(this.eventId!, this.eventForm.value).subscribe(
+        () => {
+          console.log('Event updated successfully!');
+          // show a success message
+        },
+        error => {
+          console.error('Error updating event', error);
+          // Show an error message to the user
+        }
+      );
+    } else {
+      console.error('Form is invalid');
+      //showing error messages
     }
-    
-    // Handle form submission logic
   }
+
+
+}
 
 
