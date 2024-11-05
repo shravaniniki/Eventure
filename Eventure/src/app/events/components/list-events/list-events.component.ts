@@ -20,7 +20,6 @@ import { AuthService } from '../../../auth/services/auth.service';
     gap: 15px;
     justify-content: center;
 }
-
 .flip-card {
     background-color: transparent;
     width: 320px;
@@ -29,11 +28,9 @@ import { AuthService } from '../../../auth/services/auth.service';
     perspective: 1000px;
     margin: 15px;
 }
-
 .lead.text-muted {
     color: white;
 }
-
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -41,11 +38,9 @@ import { AuthService } from '../../../auth/services/auth.service';
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
-
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
-
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -54,7 +49,6 @@ import { AuthService } from '../../../auth/services/auth.service';
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     backface-visibility: hidden;
 }
-
 /* Front Side Style */
 .flip-card-front {
     background-color: #8E2945; /* Subtle reddish-pink */
@@ -64,7 +58,6 @@ import { AuthService } from '../../../auth/services/auth.service';
     justify-content: center;
     padding: 20px;
 }
-
 /* Title Styling */
 .card-title {
     font-size: 1.75rem; /* Increase font size */
@@ -73,7 +66,7 @@ import { AuthService } from '../../../auth/services/auth.service';
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3); /* Add shadow for contrast */
     margin-bottom: 1rem;
     text-align: center;
-}
+  }
 
 /* Back Side Style */
 .flip-card-back {
@@ -84,41 +77,32 @@ import { AuthService } from '../../../auth/services/auth.service';
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 200px;
 }
-
-
 .event-name {
     font-family: 'Georgia', serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
-
 .event-list {
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
     color: white;
 }
-
 .event-list strong {
     color: #FFCDD2;
 }
-
 .event-list li {
     margin-bottom: 0.5rem;
 }
-
 .btn-outline-light {
     border-color: #D81B60;
     color: #D81B60;
 }
-
 .btn-outline-light:hover {
     background-color: #D81B60;
     color: #FFFFFF;
-}
-
-
-  `,
+}  `,
 })
 export class ListEventsComponent implements OnInit {
   events: IEvent[] = [];

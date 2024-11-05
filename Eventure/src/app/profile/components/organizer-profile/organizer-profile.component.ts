@@ -8,19 +8,19 @@ import { RouterLink, RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './organizer-profile.component.html',
-  styleUrl: './organizer-profile.component.css'
+  styleUrl: './organizer-profile.component.css',
 })
 export class OrganizerProfileComponent {
   user$: Observable<any | null> = this.authService.loggedInUser$; // Use observable to get the user object
   userName: string = '';
   userEmail: string = '';
-  userPhone: string = ''; 
-  userType: string = '';// Add properties for phone number
+  userPhone: string = '';
+  userType: string = ''; // Add properties for phone number
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.user$.subscribe(user => {
+    this.user$.subscribe((user) => {
       if (user) {
         this.userName = user.name || ''; // Assuming your user object has a 'name' property; handle null/undefined
         this.userEmail = user.email || ''; // Assuming your user object has an 'email' property

@@ -6,7 +6,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { EventService } from '../../services/event.service';
 
 @Component({
@@ -20,7 +20,10 @@ export class AddEventComponent {
   addEventForm: FormGroup;
   isSaved = false;
 
-  constructor(private eventServiceService: EventService) {
+  constructor(
+    private router: Router,
+    private eventServiceService: EventService
+  ) {
     this.addEventForm = new FormGroup({
       name: new FormControl('', Validators.required),
       phone: new FormControl('', [
@@ -58,7 +61,8 @@ export class AddEventComponent {
     this.eventServiceService.addEvent(eventData).subscribe((response: any) => {
       console.log(response);
       this.isSaved = true;
-      this.addEventForm.reset(); // Reset form on success
+      this.addEventForm.reset();
+      this.router.navigateByUrl('/list'); // Reset form on success
     });
   }
 }

@@ -42,12 +42,12 @@ export class EventService {
     // 2.3 What's the REST API Client Tool? HttpClient
     return this.http.get<any>(`${this.apiUrl}/${eventId}`);
   }
-  updateEvent(eventId: string, eventData: Event): Observable<Event> {
+  updateEvent(eventId: string, eventData: IEvent): Observable<IEvent> {
     // 2. send the data to the REST api
     // 2.1 What's the REST API URL? apiUrl
     // 2.2 What's the HTTP Method? PUT
     // 2.3 What's the REST API Client Tool? HttpClient
-    return this.http.put<Event>(`${this.apiUrl}/${eventId}`, eventData);
+    return this.http.put<IEvent>(`${this.apiUrl}/${eventId}`, eventData);
   }
 
   deleteEvent(eventId: string): Observable<void> {

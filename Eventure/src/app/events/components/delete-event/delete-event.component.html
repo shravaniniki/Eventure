@@ -12,7 +12,9 @@
           <p><strong>Email:</strong> {{ event?.email }}</p>
           <p><strong>Phone:</strong> {{ event?.phone }}</p>
           <p><strong>Location:</strong> {{ event?.location }}</p>
-          <p><strong>Date:</strong> {{ event?.e_date | date: 'mediumDate' }}</p>
+          <p>
+            <strong>Date:</strong> {{ event?.e_date | date : "mediumDate" }}
+          </p>
           <p><strong>Duration:</strong> {{ event?.duration }}</p>
           <p><strong>Max Participants:</strong> {{ event?.maxParticipants }}</p>
           <p><strong>Mode:</strong> {{ event?.e_mode }}</p>

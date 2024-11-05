@@ -13,10 +13,11 @@ import { OrganizerProfileComponent } from './profile/components/organizer-profil
 import { UserProfileComponent } from './profile/components/user-profile/user-profile.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { SignUpComponent } from './auth/components/sign-up/sign-up.component';
+
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Eventure' },
   { path: 'list', component: ListEventsComponent, title: 'home' },
- { path: 'login', component: LoginComponent, title: 'login' },
+  { path: 'login', component: LoginComponent, title: 'login' },
   { path: 'sign-up', component: SignUpComponent, title: 'sign-up' },
   {
     path: 'events',
@@ -31,7 +32,7 @@ export const routes: Routes = [
         path: ':id/edit',
         component: UpdateEventComponent,
         title: 'Update Event',
-      }, //id is url parameter
+      }, 
       { path: '', component: ListEventsComponent, title: 'Events' },
       { path: ':id', component: EventDetailsComponent, title: 'Event Detail' },
     ],
@@ -58,19 +59,5 @@ export const routes: Routes = [
         title: 'Profile',
       },
     ],
-  },
-  {
-    path: 'events',
-    children: [
-      // {path: '', component: ListEventsComponent, title: 'Events'},
-      { path: 'add', component: AddEventComponent, title: 'Events' },
-      { path: 'id', component: EventDetailsComponent, title: 'Events' },
-      { path: 'edit', component: UpdateEventComponent, title: 'Events' },
-      { path: 'id', component: DeleteEventComponent, title: 'Events' },
-    ],
-  },
-//   {
-//     path: 'auth',
-//     loadChildren: () => import('./auth/auth.module').then((m)=>m.AuthModule),
-// },
+  }
 ];

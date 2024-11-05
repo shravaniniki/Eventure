@@ -18,8 +18,6 @@ export class AuthService {
   loggedInUser$ = this.loggedInUser.asObservable();
   loggedIn: boolean = false;
 
-  // private loggedInEmail = new BehaviorSubject<string | null>(null); // Observable to track logged-in user's email
-  // loggedInEmail$ = this.loggedInEmail.asObservable(); // Expose the observable
 
   constructor(private http: HttpClient) {}
 

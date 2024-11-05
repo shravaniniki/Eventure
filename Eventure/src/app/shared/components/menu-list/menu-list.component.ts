@@ -84,12 +84,12 @@ import { AuthService } from '../../../auth/services/auth.service';
 })
 export class MenuListComponent implements OnInit {
   // loggedInEmail: string | null = null;
-  showLogoutDropdown: boolean = false;
+  //showLogoutDropdown: boolean = false;
 
   menuLinks = [
     { linkName: 'Home', linkPath: '/' },
     { linkName: 'Events', linkPath: '/list' },
-    { linkName: 'About Us', linkPath: '/about' },
+    { linkName: 'AboutUs', linkPath: '/about' },
     { linkName: 'Contact', linkPath: '/contact' },
   ];
   loggedInUser: any | null = null;
@@ -97,17 +97,17 @@ export class MenuListComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-      // Check local storage on component init
-      const storedUser = localStorage.getItem('loggedInUser');
-      if(storedUser){
-        this.loggedInUser = JSON.parse(storedUser);
-      }
-      this.authService.loggedInUser$.subscribe((user: any | null) => {
-        this.loggedInUser = user;
-      });
+    // Check local storage on component init
+    const storedUser = localStorage.getItem('loggedInUser');
+    if (storedUser) {
+      this.loggedInUser = JSON.parse(storedUser);
     }
-  
-    logout() {
-      this.authService.logout();
-    }
+    this.authService.loggedInUser$.subscribe((user: any | null) => {
+      this.loggedInUser = user;
+    });
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 }

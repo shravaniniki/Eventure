@@ -4,12 +4,13 @@
       <h1>Edit Event</h1>
     </div>
 
+
     <form
       [formGroup]="eventForm"
       (ngSubmit)="onSubmit()"
       class="col-md-6 offset-md-3"
     >
-      <!-- Form Fields -->
+      <!-- Event Name -->
       <div class="form-group row mb-3">
         <label for="nameInput" class="col-sm-2 col-form-label">Event</label>
         <div class="col-sm-10">
@@ -20,9 +21,19 @@
             placeholder="Enter Name"
             formControlName="name"
           />
+          <div
+            *ngIf="
+              eventForm.get('name')?.invalid && eventForm.get('name')?.touched
+            "
+            class="text-danger"
+          >
+            Event Name is required.
+          </div>
         </div>
       </div>
 
+
+      <!-- Organizer -->
       <div class="form-group row mb-3">
         <label for="organizerInput" class="col-sm-2 col-form-label"
           >Organizer</label
@@ -35,9 +46,20 @@
             placeholder="Enter name"
             formControlName="organizer"
           />
+          <div
+            *ngIf="
+              eventForm.get('organizer')?.invalid &&
+              eventForm.get('organizer')?.touched
+            "
+            class="text-danger"
+          >
+            Organizer Name is required.
+          </div>
         </div>
       </div>
 
+
+      <!-- Email -->
       <div class="form-group row mb-3">
         <label for="emailInput" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
@@ -48,108 +70,198 @@
             placeholder="Enter Email"
             formControlName="email"
           />
+          <div
+            *ngIf="
+              eventForm.get('email')?.invalid && eventForm.get('email')?.touched
+            "
+            class="text-danger"
+          >
+            Enter a valid email.
+          </div>
         </div>
       </div>
-
-      <div class="form-group row mb-3">
-        <label for="phoneInput" class="col-sm-2 col-form-label">Phone</label>
-        <div class="col-sm-10">
-          <input
-            id="phoneInput"
-            type="tel"
-            class="form-control"
-            placeholder="Enter phone"
-            formControlName="phone"
-          />
-        </div>
-      </div>
-
-      <div class="form-group row mb-3">
-        <label for="locationInput" class="col-sm-2 col-form-label"
-          >Location</label
-        >
-        <div class="col-sm-10">
-          <input
-            id="locationInput"
-            type="text"
-            class="form-control"
-            placeholder="Enter location"
-            formControlName="location"
-          />
-        </div>
-      </div>
-
-      <div class="form-group row mb-3">
-        <label for="dateInput" class="col-sm-2 col-form-label">Date</label>
-        <div class="col-sm-10">
-          <input
-            id="dateInput"
-            type="date"
-            class="form-control"
-            formControlName="date"
-          />
-        </div>
-      </div>
-
-      <div class="form-group row mb-3">
-        <label for="durationInput" class="col-sm-2 col-form-label"
-          >Duration</label
-        >
-        <div class="col-sm-10">
-          <input
-            id="durationInput"
-            type="text"
-            class="form-control"
-            placeholder="Enter duration [hh:mm]"
-            formControlName="duration"
-          />
-        </div>
-      </div>
-
-      <div class="form-group row mb-3">
-        <label for="maxpInput" class="col-sm-2 col-form-label">Attendees</label>
-        <div class="col-sm-10">
-          <input
-            id="maxpInput"
-            type="number"
-            class="form-control"
-            placeholder="Enter Max No of participants"
-            formControlName="maxParticipants"
-          />
-        </div>
-      </div>
-
-      <div class="form-group row mb-3">
-        <label for="modeInput" class="col-sm-2 col-form-label">Mode</label>
-        <div class="col-sm-10">
-          <select id="modeInput" class="form-control" formControlName="mode">
-            <option value="" disabled>Select Mode</option>
-            <option value="Online">Online</option>
-            <option value="Offline">Offline</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group row mb-3">
-        <label for="descriptionInput" class="col-sm-2 col-form-label"
-          >Description</label
-        >
-        <div class="col-sm-10">
-          <input
-            type="text"
-            id="descriptionInput"
-            class="form-control"
-            placeholder="Enter description"
-            formControlName="description"
-          />
-        </div>
-      </div>
-
-      <div class="form-group row mb-3">
-        <div class="col-sm-10 offset-sm-2">
-          <button type="submit" class="btn btn-primary">Update Event</button>
-        </div>
-      </div>
-    </form>
+<!-- Phone -->
+<div class="form-group row mb-3">
+  <label for="phoneInput" class="col-sm-2 col-form-label">Phone</label>
+  <div class="col-sm-10">
+    <input
+      id="phoneInput"
+      type="tel"
+      class="form-control"
+      placeholder="Enter phone"
+      formControlName="phone"
+    />
+    <div
+      *ngIf="
+        eventForm.get('phone')?.invalid && eventForm.get('phone')?.touched
+      "
+      class="text-danger"
+    >
+      Enter a valid phone number (10 digits).
+    </div>
   </div>
 </div>
+
+
+<!-- Location -->
+<div class="form-group row mb-3">
+  <label for="locationInput" class="col-sm-2 col-form-label"
+    >Location</label
+  >
+  <div class="col-sm-10">
+    <input
+      id="locationInput"
+      type="text"
+      class="form-control"
+      placeholder="Enter location"
+      formControlName="location"
+    />
+    <div
+      *ngIf="
+        eventForm.get('location')?.invalid &&
+        eventForm.get('location')?.touched
+      "
+      class="text-danger"
+    >
+      Location is required.
+    </div>
+  </div>
+</div>
+
+
+<!-- Date -->
+<div class="form-group row mb-3">
+  <label for="dateInput" class="col-sm-2 col-form-label">Date</label>
+  <div class="col-sm-10">
+    <input
+      id="dateInput"
+      type="text"
+      class="form-control"
+      placeholder="Enter date (yyyy-MM-dd)"
+      formControlName="date"
+    />
+    <div
+      *ngIf="
+        eventForm.get('date')?.invalid && eventForm.get('date')?.touched
+      "
+      class="text-danger"
+    >
+      Date is required and must be in 'yyyy-MM-dd' format.
+    </div>
+  </div>
+</div>
+
+
+<!-- Duration -->
+<div class="form-group row mb-3">
+  <label for="durationInput" class="col-sm-2 col-form-label"
+    >Duration</label
+  >
+  <div class="col-sm-10">
+    <input
+      id="durationInput"
+      type="text"
+      class="form-control"
+      placeholder="Enter duration [hh:mm]"
+      formControlName="duration"
+    />
+    <div
+      *ngIf="
+        eventForm.get('duration')?.invalid &&
+        eventForm.get('duration')?.touched
+      "
+      class="text-danger"
+    >
+      Duration is required.
+    </div>
+  </div>
+</div>
+  <!-- Max Participants -->
+  <div class="form-group row mb-3">
+    <label for="maxpInput" class="col-sm-2 col-form-label">Attendees</label>
+    <div class="col-sm-10">
+      <input
+        id="maxpInput"
+        type="number"
+        class="form-control"
+        placeholder="Enter Max No of participants"
+        formControlName="maxParticipants"
+      />
+      <div
+        *ngIf="
+          eventForm.get('maxParticipants')?.invalid &&
+          eventForm.get('maxParticipants')?.touched
+        "
+        class="text-danger"
+      >
+        Max participants is required and should be at least 1.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Mode -->
+  <div class="form-group row mb-3">
+    <label for="modeInput" class="col-sm-2 col-form-label">Mode</label>
+    <div class="col-sm-10">
+      <!-- If the form is updated, show the value as text -->
+      <div *ngIf="isUpdated; else editMode">
+        <span class="form-control-static">{{
+          eventForm.get("mode")?.value
+        }}</span>
+        <!-- Display mode as text -->
+      </div>
+
+
+      <!-- If the form is being edited, show the dropdown -->
+      <ng-template #editMode>
+        <select id="modeInput" class="form-control" formControlName="mode">
+          <option value="" disabled>Select Mode</option>
+          <option value="Online">Online</option>
+          <option value="Offline">Offline</option>
+        </select>
+      </ng-template>
+    </div>
+  </div>
+
+
+  <!-- Description -->
+  <div class="form-group row mb-3">
+    <label for="descriptionInput" class="col-sm-2 col-form-label"
+      >Description</label
+    >
+    <div class="col-sm-10">
+      <input
+        type="text"
+        id="descriptionInput"
+        class="form-control"
+        placeholder="Enter description"
+        formControlName="description"
+      />
+      <div
+        *ngIf="
+          eventForm.get('description')?.invalid &&
+          eventForm.get('description')?.touched
+        "
+        class="text-danger"
+      >
+        Description is required.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Success Message -->
+  <div class="alert alert-success" *ngIf="isUpdated">Event Updated!</div>
+
+
+  <!-- Submit Button -->
+  <div class="form-group row mb-3">
+    <div class="col-sm-10 offset-sm-2">
+      <button type="submit" class="btn btn-primary">Update Event</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+

@@ -39,28 +39,12 @@
               >
                 <h1>{{ event.name }}</h1>
                 <p>Description:</p>
-                <p class="lead text-muted">{{ event.description }}</p>
-
-                <!-- Check if user is logged in using ngIf -->
-                <div *ngIf="isLoggedIn(); else loginLink">
-                  <!-- If user is logged in, show the Register Event button -->
-                  <button
-                    routerLink="/registration"
-                    class="btn btn-primary mt-auto"
-                  >
+                <p class="lead text-white">{{ event.description }}</p>
+                <button class="btn btn-outline-light mt-auto">
+                  <a routerLink="/login" class="btn btn-primary">
                     <i class="bi bi-arrow-left-circle"></i> Register Event
-                  </button>
-                </div>
-
-                <!-- If the user is not logged in, show the Login button -->
-                <ng-template #loginLink>
-                  <button
-                    routerLink="/login"
-                    class="btn btn-outline-primary mt-auto"
-                  >
-                    <i class="bi bi-arrow-left-circle"></i> Login to Register
-                  </button>
-                </ng-template>
+                  </a>
+                </button>
               </div>
             </div>
           </div>

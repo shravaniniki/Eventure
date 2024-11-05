@@ -44,15 +44,27 @@
         <!-- Password input -->
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" formControlName="password"
-            minlength="6" [ngClass]="{
-          'is-invalid': loginForm.get('password')?.touched &&  loginForm.get('password')?.errors}">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            minlength="6"
+            [ngClass]="{
+              'is-invalid':
+                loginForm.get('password')?.touched &&
+                loginForm.get('password')?.errors
+            }"
+          />
           <!-- displaying validation related messages for password -->
           <div class="invalid-feedback">
             <!-- checking with password required -->
-            <div *ngIf=" loginForm.get('password')?.hasError('required')">Password is required</div>
+            <div *ngIf="loginForm.get('password')?.hasError('required')">
+              Password is required
+            </div>
             <!-- checking for minimum characters in the password -->
-            <div *ngIf=" loginForm.get('password')?.hasError('minlength')">Password must be at least 6 characters
+            <div *ngIf="loginForm.get('password')?.hasError('minlength')">
+              Password must be at least 6 characters
             </div>
           </div>
         </div>
@@ -73,7 +85,6 @@
           <a
             class="btn btn-primary btn-lg btn-block"
             style="background-color: #3b5998"
-            href="/sign-up"
             role="button"
           >
             Sign-up

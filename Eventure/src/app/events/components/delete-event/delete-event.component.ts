@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventService } from '../../services/event.service';
-import { IEvent } from '../../model/ievent.model'; 
+import { IEvent } from '../../model/ievent.model';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './delete-event.component.html',
-  styles: []
+  styles: [],
 })
 export class DeleteEventComponent implements OnInit {
   eventId: string | null = null;
@@ -22,7 +22,7 @@ export class DeleteEventComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       this.eventId = params.get('id');
       if (this.eventId) {
         this.fetchEventData(this.eventId);
@@ -35,14 +35,16 @@ export class DeleteEventComponent implements OnInit {
       (eventData: IEvent) => {
         this.event = eventData;
       },
-      error => {
+      (error) => {
         console.error('Error fetching event data', error);
       }
     );
   }
 
   deleteEvent(event: Event): void {
-    const confirmDelete = confirm('Are you sure you want to delete this event?');
+    const confirmDelete = confirm(
+      'Are you sure you want to delete this event?'
+    );
     if (confirmDelete && this.eventId) {
       // Disable button to prevent multiple clicks
       const target = event.target as HTMLButtonElement;
@@ -52,9 +54,9 @@ export class DeleteEventComponent implements OnInit {
       this.eventService.deleteEvent(this.eventId).subscribe(
         () => {
           alert('Event deleted successfully!');
-          this.router.navigate(['/organizer']); // Redirect to events list 
+          this.router.navigate(['/organizer']); // Redirect to events list
         },
-        error => {
+        (error) => {
           console.error('Error deleting event', error);
           alert('There was an error deleting the event. Please try again.');
           target.innerText = 'Delete Event'; // Reset button text on error
