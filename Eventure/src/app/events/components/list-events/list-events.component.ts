@@ -30,6 +30,9 @@ import { IEvent } from '../../model/ievent.model';
     perspective: 1000px;
     margin: 15px;
 }
+.lead.text-muted {
+  color: white;
+}
 .flip-card-inner {
     position: relative;
     width: 100%;

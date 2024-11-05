@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-organizer',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,RouterModule],
   templateUrl: './organizer.component.html',
   styleUrl: './organizer.component.css'
 })
