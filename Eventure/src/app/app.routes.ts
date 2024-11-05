@@ -8,7 +8,6 @@ import { EventDetailsComponent } from './events/components/event-details/event-d
 import { UpdateEventComponent } from './events/components/update-event/update-event.component';
 import { DeleteEventComponent } from './events/components/delete-event/delete-event.component';
 import { ContactComponent } from './contact/contact.component';
-import { UserComponent } from './profile/components/user/user.component';
 import { UserSettingsComponent } from './registration/registration.component';
 import { OrganizerProfileComponent } from './profile/components/organizer-profile/organizer-profile.component';
 import { UserProfileComponent } from './profile/components/user-profile/user-profile.component';
@@ -17,7 +16,7 @@ import { SignUpComponent } from './auth/components/sign-up/sign-up.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent, title: 'Eventure' },
   { path: 'list', component: ListEventsComponent, title: 'home' },
-  { path: 'login', component: LoginComponent, title: 'login' },
+ { path: 'login', component: LoginComponent, title: 'login' },
   { path: 'sign-up', component: SignUpComponent, title: 'sign-up' },
   {
     path: 'events',
@@ -70,4 +69,8 @@ export const routes: Routes = [
       { path: 'id', component: DeleteEventComponent, title: 'Events' },
     ],
   },
+//   {
+//     path: 'auth',
+//     loadChildren: () => import('./auth/auth.module').then((m)=>m.AuthModule),
+// },
 ];

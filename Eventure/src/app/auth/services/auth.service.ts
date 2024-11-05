@@ -14,11 +14,11 @@ export interface LoginResponse {
   providedIn: 'root',
 })
 export class AuthService {
-  private loggedInUser = new BehaviorSubject<any | null>(null); // Store the entire user object
+  private loggedInUser = new BehaviorSubject<LoginResponse | null>(null); // Store the entire user object
   loggedInUser$ = this.loggedInUser.asObservable();
 
-  private loggedInEmail = new BehaviorSubject<string | null>(null); // Observable to track logged-in user's email
-  loggedInEmail$ = this.loggedInEmail.asObservable(); // Expose the observable
+  // private loggedInEmail = new BehaviorSubject<string | null>(null); // Observable to track logged-in user's email
+  // loggedInEmail$ = this.loggedInEmail.asObservable(); // Expose the observable
 
   constructor(private http: HttpClient) {}
 
@@ -27,33 +27,33 @@ export class AuthService {
       .post<LoginResponse>(`${BASIC_URL}/login`, credentials)
       .pipe(
         map((response: LoginResponse) => {
+          console.log(response);
           this.loggedInUser.next(response);
-          this.setLoggedInEmail(response.email);
+          localStorage.setItem('loggedInUser', JSON.stringify(response)); //Store user data in localstorage
           return response;
         })
       );
   }
 
+ 
   logout() {
-    this.loggedInUser.next(null); // Clear logged-in user data
-    // You might add logic here to clear any stored tokens (if using JWT)
+    this.loggedInUser.next(null);
+    localStorage.removeItem('loggedInUser');
   }
 
   isLoggedIn(): boolean {
-    return this.loggedInUser.value !== null; // Check if a user is logged in
+    return this.loggedInUser.value !== null;
   }
 
   getUserType(): string | null {
-    return this.loggedInUser.value?.userType || null; //Safely access userType
+    return this.loggedInUser.value?.userType || null;
   }
 
-  // Function to set the email after a successful login
-  setLoggedInEmail(email: string) {
-    this.loggedInEmail.next(email);
+  getUserName(): string | null {
+    return this.loggedInUser.value?.name || null;
+  }
+  getPhoneNo(): string | null {
+    return this.loggedInUser.value?.phoneNo || null;
   }
 
-  // Function to clear email on logout
-  clearLoggedInEmail() {
-    this.loggedInEmail.next(null);
-  }
 }
