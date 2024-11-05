@@ -7,6 +7,8 @@ import { IEvent } from '../model/ievent.model';
   providedIn: 'root',
 })
 export class EventService {
+  // 2.3 What's the REST API Client Tool? HttpClient
+ 
   private apiUrl = 'http://localhost:8081/api/events';
 
   constructor(private http: HttpClient) { }
@@ -50,6 +52,9 @@ export class EventService {
 
   deleteEvent(eventId: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${eventId}`);
+  }
+  getEventsByOrganizer(email: string): Observable<IEvent[]> {
+    return this.http.get<IEvent[]>(`${this.apiUrl}/organizer/${email}`);
   }
 
  

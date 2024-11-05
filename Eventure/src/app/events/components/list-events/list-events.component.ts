@@ -7,12 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { IEvent } from '../../model/ievent.model';
 import { AuthService } from '../../../auth/services/auth.service';
 
-
-
 @Component({
   selector: 'app-list-events',
   standalone: true,
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './list-events.component.html',
   styles: `
 
@@ -86,8 +84,8 @@ import { AuthService } from '../../../auth/services/auth.service';
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    opacity: 200px;
 }
+
 
 .event-name {
     font-family: 'Georgia', serif;
@@ -120,17 +118,17 @@ import { AuthService } from '../../../auth/services/auth.service';
 }
 
 
-  `
+  `,
 })
 export class ListEventsComponent implements OnInit {
   events: IEvent[] = [];
   router: any;
-  
-  constructor(private eventService: EventService,private authService: AuthService) {
-    
-  }
 
-  
+  constructor(
+    private eventService: EventService,
+    private authService: AuthService
+  ) {}
+
   ngOnInit(): void {
     // Connect to the Service using dep injection
     // 1. Send the request to the service
@@ -139,7 +137,7 @@ export class ListEventsComponent implements OnInit {
     this.eventService.getEvents().subscribe((response: IEvent[]) => {
       console.log(response);
       this.events = response;
-    })
+    });
   }
 
   isLoggedIn(): boolean {

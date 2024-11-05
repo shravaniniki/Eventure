@@ -52,7 +52,7 @@ export class DeleteEventComponent implements OnInit {
       this.eventService.deleteEvent(this.eventId).subscribe(
         () => {
           alert('Event deleted successfully!');
-          this.router.navigate(['/events']); // Redirect to events list 
+          this.router.navigate(['/organizer']); // Redirect to events list 
         },
         error => {
           console.error('Error deleting event', error);

@@ -40,22 +40,6 @@
 
   <!-- Display logged-in username and logout option if logged in -->
   <ng-container *ngIf="loggedInUser">
-    <!-- <div
-      class="dropdown"
-      (click)="toggleLogoutDropdown()"
-      [class.show]="showLogoutDropdown"
-    >
-      <div class="dropdown-menu" [class.show]="showLogoutDropdown">
-        <button
-          type="button"
-          (click)="logout()"
-          class="btn btn-logout dropdown-item"
-        >
-          Logout
-        </button>
-      </div>
-    </div> -->
-
     <!-- Optional Profile Icon Dropdown -->
     <a routerLink="/profile/organizer-profile">
       <svg
@@ -73,14 +57,6 @@
           d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
         />
       </svg>
-      <!-- <ul
-        class="dropdown-menu dropdown-menu-dark"
-        aria-labelledby="navbarDarkDropdownMenuLink"
-      >
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul> -->
     </a>
   </ng-container>
 </ul>
