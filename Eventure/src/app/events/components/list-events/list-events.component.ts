@@ -14,14 +14,14 @@ import { IEvent } from '../../model/ievent.model';
   imports: [RouterModule,CommonModule],
   templateUrl: './list-events.component.html',
   styles: `
-  .card-container {
+
+.card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px; /* Controls spacing between cards */
+    gap: 15px;
     justify-content: center;
 }
 
-/* Flip Card Container */
 .flip-card {
     background-color: transparent;
     width: 320px;
@@ -30,9 +30,11 @@ import { IEvent } from '../../model/ievent.model';
     perspective: 1000px;
     margin: 15px;
 }
+
 .lead.text-muted {
-  color: white;
+    color: white;
 }
+
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -40,11 +42,11 @@ import { IEvent } from '../../model/ievent.model';
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
+
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-/* Front and Back Side Styling */
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -56,66 +58,66 @@ import { IEvent } from '../../model/ievent.model';
 
 /* Front Side Style */
 .flip-card-front {
-    background-color: #5072A7; /* Navy blue for front */
-    color: white; /* Light gray text */
+    background-color: #8E2945; /* Subtle reddish-pink */
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 20px;
+}
+
+/* Title Styling */
+.card-title {
+    font-size: 1.75rem; /* Increase font size */
+    font-family: 'Playfair Display', serif; /* Stylish serif font */
+    color: #FFFFFF; /* Bright white */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3); /* Add shadow for contrast */
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 /* Back Side Style */
 .flip-card-back {
-    background-color: #34495e; /* Slightly darker navy */
-    color: white; /* Light gray text */
+    background-color: #8E2945; /* Slightly muted reddish-pink */
+    color: white;
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 200px;
 }
 
-/* Typography and Layout */
-.card-title {
-    font-size: 1.25rem;
-    color: white;
+.event-name {
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.text-accent {
-    color: #004687;
-}
-/* Event Name Style */
-.event-name {
-    font-family: 'Georgia', serif; /* A classic serif font for elegance */
-    font-size: 1.5rem; /* Larger size for prominence */
-    margin-bottom: 1rem; /* Spacing below the title */
-}
-
-/* Event List Style */
 .event-list {
-    font-family: 'Arial', sans-serif; /* A clean sans-serif font for readability */
-    font-size: 1rem; /* Standard size for list items */
-    color: #bdc3c7; /* Lighter color for a softer look */
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: white;
 }
 
-/* Strong Element Style in List */
 .event-list strong {
-    color: #ecf0f1; /* A lighter color for strong elements */
+    color: #FFCDD2;
 }
 
-/* Spacing Between List Items */
 .event-list li {
-    margin-bottom: 0.5rem; /* Space between list items */
+    margin-bottom: 0.5rem;
 }
 
 .btn-outline-light {
-    border-color: #2980b9;
-    color: #2980b9;
+    border-color: #D81B60;
+    color: #D81B60;
 }
+
 .btn-outline-light:hover {
-    background-color: #2980b9;
-    color: #ecf0f1;
+    background-color: #D81B60;
+    color: #FFFFFF;
 }
+
 
   `
 })
