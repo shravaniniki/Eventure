@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <h1>Add Event</h1>
     </div>
-
+<<<<<<< HEAD
     <form
       class="col-md-6 offset-md-3"
       [formGroup]="addEventForm"
@@ -31,7 +31,6 @@
           </div>
         </div>
       </div>
-
       <div class="form-group row mb-3">
         <label for="organizerInput" class="col-sm-2 col-form-label"
           >Organizer</label
@@ -78,12 +77,39 @@
             </div>
             <div *ngIf="addEventForm.get('email')?.hasError('email')">
               Email seems to be not valid
+=======
+
+    <form
+      class="col-md-6 offset-md-3"
+      [formGroup]="addEventForm"
+      (ngSubmit)="handleSubmit()"
+    >
+      <div class="form-group row mb-3">
+        <label for="nameInput" class="col-sm-2 col-form-label">Event</label>
+        <div class="col-sm-10">
+          <input
+            id="nameInput"
+            type="text"
+            class="form-control"
+            placeholder="Enter Name"
+            formControlName="name"
+            [ngClass]="{
+              'is-invalid':
+                addEventForm.get('name')?.touched &&
+                addEventForm.get('name')?.invalid
+            }"
+          />
+          <div class="invalid-feedback">
+            <div *ngIf="addEventForm.get('name')?.hasError('required')">
+              Event Name is required
+>>>>>>> 0f6fb80682a72b0701b57ece52a3a3e85ae037b3
             </div>
           </div>
         </div>
       </div>
 
       <div class="form-group row mb-3">
+<<<<<<< HEAD
         <label for="phoneInput" class="col-sm-2 col-form-label">Phone</label>
         <div class="col-sm-10">
           <input
@@ -107,12 +133,34 @@
             </div>
             <div *ngIf="addEventForm.get('phone')?.hasError('pattern')">
               Phone must be a 10-digit number.
+=======
+        <label for="organizerInput" class="col-sm-2 col-form-label"
+          >Organizer</label
+        >
+        <div class="col-sm-10">
+          <input
+            id="organizerInput"
+            type="text"
+            class="form-control"
+            placeholder="Enter name"
+            formControlName="organizer"
+            [ngClass]="{
+              'is-invalid':
+                addEventForm.get('organizer')?.touched &&
+                addEventForm.get('organizer')?.invalid
+            }"
+          />
+          <div class="invalid-feedback">
+            <div *ngIf="addEventForm.get('organizer')?.hasError('required')">
+              Organizer name is required
+>>>>>>> 0f6fb80682a72b0701b57ece52a3a3e85ae037b3
             </div>
           </div>
         </div>
       </div>
 
       <div class="form-group row mb-3">
+<<<<<<< HEAD
         <label for="locationInput" class="col-sm-2 col-form-label"
           >Location</label
         >
@@ -132,12 +180,35 @@
           <div class="invalid-feedback">
             <div *ngIf="addEventForm.get('location')?.hasError('required')">
               Location is required
+=======
+        <label for="emailInput" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input
+            id="emailInput"
+            type="email"
+            class="form-control"
+            placeholder="Enter Email"
+            formControlName="email"
+            [ngClass]="{
+              'is-invalid':
+                addEventForm.get('email')?.touched &&
+                addEventForm.get('email')?.invalid
+            }"
+          />
+          <div class="invalid-feedback">
+            <div *ngIf="addEventForm.get('email')?.hasError('required')">
+              Email is required
+            </div>
+            <div *ngIf="addEventForm.get('email')?.hasError('email')">
+              Email seems to be not valid
+>>>>>>> 0f6fb80682a72b0701b57ece52a3a3e85ae037b3
             </div>
           </div>
         </div>
       </div>
 
       <div class="form-group row mb-3">
+<<<<<<< HEAD
         <label for="dateInput" class="col-sm-2 col-form-label">Date</label>
         <div class="col-sm-10">
           <input
@@ -185,11 +256,193 @@
             </div>
             <div *ngIf="addEventForm.get('duration')?.hasError('pattern')">
               Duration must be in HH:mm (24-hour) format.
+=======
+        <label for="phoneInput" class="col-sm-2 col-form-label">Phone</label>
+        <div class="col-sm-10">
+          <input
+            id="phoneInput"
+            type="tel"
+            class="form-control"
+            placeholder="Enter phone"
+            formControlName="phone"
+            [ngClass]="{
+              'is-invalid':
+                addEventForm.get('phone')?.touched &&
+                addEventForm.get('phone')?.invalid
+            }"
+          />
+          <div
+            class="invalid-feedback"
+            *ngIf="addEventForm.get('phone')?.touched"
+          >
+            <div *ngIf="addEventForm.get('phone')?.hasError('required')">
+              Phone is required
+            </div>
+            <div *ngIf="addEventForm.get('phone')?.hasError('pattern')">
+              Phone must be a 10-digit number.
+>>>>>>> 0f6fb80682a72b0701b57ece52a3a3e85ae037b3
             </div>
           </div>
         </div>
       </div>
 
+      <div class="form-group row mb-3">
+<<<<<<< HEAD
+        <label for="maxpInput" class="col-sm-2 col-form-label">Attendees</label>
+        <div class="col-sm-10">
+          <input
+            id="maxpInput"
+            type="number"
+            class="form-control"
+            placeholder="Enter Max No of participants"
+            formControlName="maxParticipants"
+            [ngClass]="{
+              'is-invalid':
+                addEventForm.get('maxParticipants')?.touched &&
+                addEventForm.get('maxParticipants')?.invalid
+            }"
+            aria-invalid="true"
+          />
+          <div class="invalid-feedback">
+            <div
+              *ngIf="addEventForm.get('maxParticipants')?.hasError('required')"
+            >
+              Participants are required.
+            </div>
+            <div *ngIf="addEventForm.get('maxParticipants')?.hasError('min')">
+              Participants must be a positive number.
+=======
+        <label for="locationInput" class="col-sm-2 col-form-label"
+          >Location</label
+        >
+        <div class="col-sm-10">
+          <input
+            id="locationInput"
+            type="text"
+            class="form-control"
+            placeholder="Enter location"
+            formControlName="location"
+            [ngClass]="{
+              'is-invalid':
+                addEventForm.get('location')?.touched &&
+                addEventForm.get('location')?.invalid
+            }"
+          />
+          <div class="invalid-feedback">
+            <div *ngIf="addEventForm.get('location')?.hasError('required')">
+              Location is required
+>>>>>>> 0f6fb80682a72b0701b57ece52a3a3e85ae037b3
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row mb-3">
+<<<<<<< HEAD
+        <label for="modeInput" class="col-sm-2 col-form-label">Mode</label>
+        <div class="col-sm-10">
+          <select
+            id="modeInput"
+            class="form-control"
+            formControlName="mode"
+            [ngClass]="{
+              'is-invalid':
+                addEventForm.get('mode')?.touched &&
+                addEventForm.get('mode')?.invalid
+            }"
+          >
+            <option value="" disabled selected>Select Mode</option>
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
+          </select>
+          <div
+            class="invalid-feedback"
+            *ngIf="addEventForm.get('mode')?.touched"
+          >
+            <div *ngIf="addEventForm.get('mode')?.hasError('required')">
+              Event mode is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row mb-3">
+        <label for="descriptionInput" class="col-sm-2 col-form-label"
+          >Description</label
+        >
+        <div class="col-sm-10">
+          <input
+            id="descriptionInput"
+            type="text"
+            class="form-control"
+            placeholder="Enter description"
+            formControlName="description"
+            [ngClass]="{
+              'is-invalid':
+                addEventForm.get('location')?.touched &&
+                addEventForm.get('location')?.invalid
+            }"
+          />
+          <div class="invalid-feedback">
+            <div *ngIf="addEventForm.get('description')?.hasError('required')">
+              Description is required
+=======
+        <label for="dateInput" class="col-sm-2 col-form-label">Date</label>
+        <div class="col-sm-10">
+          <input
+            id="dateInput"
+            type="text"
+            class="form-control"
+            placeholder="Enter date [YYYY-MM-DD]"
+            formControlName="date"
+            [ngClass]="{
+              'is-invalid':
+                addEventForm.get('date')?.touched &&
+                addEventForm.get('date')?.invalid
+            }"
+          />
+          <div class="invalid-feedback">
+            <div *ngIf="addEventForm.get('date')?.hasError('required')">
+              Event Date is required.
+            </div>
+            <div *ngIf="addEventForm.get('date')?.hasError('pattern')">
+              Date must be in YYYY-MM-DD format.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row mb-3">
+        <label for="durationInput" class="col-sm-2 col-form-label"
+          >Duration</label
+        >
+        <div class="col-sm-10">
+          <input
+            id="durationInput"
+            type="text"
+            class="form-control"
+            placeholder="Enter duration [hh:mm]"
+            formControlName="duration"
+            [ngClass]="{
+              'is-invalid':
+                addEventForm.get('duration')?.touched &&
+                addEventForm.get('duration')?.invalid
+            }"
+          />
+          <div class="invalid-feedback">
+            <div *ngIf="addEventForm.get('duration')?.hasError('required')">
+              Duration is required.
+            </div>
+            <div *ngIf="addEventForm.get('duration')?.hasError('pattern')">
+              Duration must be in HH:mm (24-hour) format.
+>>>>>>> 0f6fb80682a72b0701b57ece52a3a3e85ae037b3
+            </div>
+          </div>
+        </div>
+      </div>
+
+<<<<<<< HEAD
+      <div class="alert alert-success" *ngIf="isSaved">Event Added!</div>
+
+=======
       <div class="form-group row mb-3">
         <label for="maxpInput" class="col-sm-2 col-form-label">Attendees</label>
         <div class="col-sm-10">
@@ -273,6 +526,7 @@
 
       <div class="alert alert-success" *ngIf="isSaved">Event Added!</div>
 
+>>>>>>> 0f6fb80682a72b0701b57ece52a3a3e85ae037b3
       <div class="form-group row">
         <div class="col-sm-10 offset-sm-2">
           <button
