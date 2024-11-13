@@ -8,12 +8,8 @@ import { IEvent } from '../model/ievent.model';
 })
 export class EventService {
   // 2.3 What's the REST API Client Tool? HttpClient
- 
   private apiUrl = 'http://localhost:8081/api/events';
-
   constructor(private http: HttpClient) { }
-
-  
   // 1. get the request from component
   getEvents(): Observable<IEvent[]> {
     // 2. send the request to the REST api

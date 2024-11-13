@@ -3,4 +3,5 @@ export interface Iuser {
   email:string;
   password:string;
   phoneno:string;
+  eventId:number;
 }

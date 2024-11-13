@@ -9,5 +9,6 @@ export interface IEvent {
     no_of_part: number;       // Number of participants (default 0)
     maxParticipants: number;   // Maximum participants allowed
     e_mode: string;           // Mode of the event (e.g., online, offline)
-    description: string;      // Description of the event
+    description: string;  
+    id: string;        // Description of the event
 }
